@@ -5,7 +5,7 @@ La lengua de señas es el principal medio de comunicación para los sordos. Es u
 Las lenguas de señas son todas diferentes, no son inteligibles entre sí, no son universales y tienen su propia gramática y sintaxis las cuales difieren de las del lenguaje hablado.
 
 \section{Escritura de señas Sutton}\label{section:state-of-the-art:sw}
-La escritura de señas Sutton (Sutton SignWriting), comúnmente conocida como escritura de señas (SignWriting), es un sistema de escritura de lenguas de señas. Es muy especifíco y visualmente icónico, tanto en las formas de los personajes, que son imágenes abstractas de las manos, la cara y el cuerpo, como en su disposición espacial en la página, que no sigue un orden secuencial como las letras que forman las palabras escritas. Fue desarrollado en 1974 por Valerie Sutton, una bailarina que, dos años antes, había desarrollado la escritura danzaria (DanceWriting). Algunas formas estandarizadas más nuevas se conocen como el Alfabeto internacional de escritura por señas (ISWA por sus siglas en inglés).
+La escritura de señas Sutton (Sutton SignWriting), comúnmente conocida como escritura de señas (SignWriting), es un sistema de escritura de lenguas de señas. Es muy específico y visualmente icónico, tanto en las formas de los personajes, que son imágenes abstractas de las manos, la cara y el cuerpo, como en su disposición espacial en la página, que no sigue un orden secuencial como las letras que forman las palabras escritas. Fue desarrollado en 1974 por Valerie Sutton, una bailarina que, dos años antes, había desarrollado la escritura danzaria (DanceWriting). Algunas formas estandarizadas más nuevas se conocen como el Alfabeto internacional de escritura por señas (ISWA por sus siglas en inglés).
 
 \subsection{Símbolos}\label{subsection:state-of-the-art:sl:symbols}
 La cantidad de símbolos es extensa y, a menudo, brinda múltiples formas de escribir un solo signo. Así como tomó muchos siglos para que la ortografía de los diversos idiomas se estandarizara, la ortografía en SignWriting aún no está estandarizada para ninguna lengua de señas.
@@ -80,7 +80,7 @@ Al igual que con la orientación, las flechas de movimiento distinguen dos plano
 
 Los movimientos rectos son en una de las ocho direcciones para cualquier plano, como en las ocho direcciones principales de una brújula. Una flecha recta larga indica movimiento desde el codo, una flecha corta con una barra transversal detrás indica movimiento desde la muñeca y una flecha corta simple indica un movimiento pequeño. (Duplicados, en direcciones opuestas, estos pueden mostrar movimientos de cabeza desde la muñeca). Una flecha curva secundaria que cruza la flecha principal muestra que el brazo gira mientras se mueve. (Duplicadas, en direcciones opuestas, pueden mostrar el temblor de la mano). Las flechas pueden girar, curvarse, zigzaguear y hacer bucles.
 
-\subsection{Movimiento de los hombros, cabeza y ojos}\label{subsection:state-of-the-art:sl:head_eye_shoulders}
+\subsection{Movimiento de la cabeza y los ojos}\label{subsection:state-of-the-art:sl:head_eye_shoulders}
 Las flechas en la cara a la altura de los ojos muestran la dirección de la mirada. 
 
 \subsection{Símbolos de Contacto}\label{subsection:state-of-the-art:sl:contact_symbol}
@@ -121,61 +121,7 @@ También hay símbolos que indican la velocidad del movimiento, si el movimiento
 \subsection{Puntuación}\label{subsection:state-of-the-art:sl:punctuation}
 Existen varios símbolos de puntuación que corresponden a comas, puntos, signos de interrogación y exclamación y otros símbolos de puntuación de otras escrituras. Estos se escriben entre signos, y las líneas no se rompen entre un signo y su siguiente símbolo de puntuación.
 
-\section{Traducción automática}\label{section:state-of-the-art:traduccion}
-La generación automática de avatares para las lenguas de señas como problema en si son un subconjunto de los
-problemas de traducción automática y de procesamiento de lenguajes naturales. Existen tres tipos de métodos esenciales en el
-ámbito de la traducción automática.
 
-\subsection{Basada en métodos semánticos}\label{subsection:state-of-the-art:traduccion:semantic}
-Los métodos basados en este acercamiento realizan análisis
-sintácticos y semánticos utilizando bases de conocimientos, ontologías y reglas definidas según el lenguaje que se utilice [\cite{knight1994building}]. Son presentadas tres ramas
-principales de esta familia:
-\begin{itemize}
-\item las basadas en traducciones directas 
-\item las basadas en transferencia 
-\item las basadas en Interlingua [\cite{klueva2007semantics}].
-\end{itemize}
- 
-Los métodos de traducción automática directa consisten en reemplazar las palabras de un lenguaje a otro sin considerar aspectos sintácticos ni semánticos del lenguaje origen o destino, además de no utilizar información contextualizada [\cite{okpor2014machine}].
-
-Los basados en transferencia realizan transformaciones para obtener textos correctos del lenguaje destino aplicando reglas específicas a los lenguajes de origen y destino.
-
-Generalmente, utilizan análisis sintácticos y semánticos en algún grado para realizar
-la traducción [\cite{gehlot2015hindi}].
-
-Los que son basados en Interlingua transforman la entrada de un lenguaje, el cual sería el de origen a una Interlingua. Este último  no es más que un lenguaje artificial, diseñado para la traducción automática. Tomándose en cuenta ciertas distinciones necesarias para una traducción exitosa a un lenguaje de destino a pesar de no evidenciarse en el lenguaje de origen [\cite{zhu2020language}].
-
-La traducción por Interlingua puede ser tratada como un caso particular de los métodos de transferencia, solo que pasando por un lenguaje ''común''. Esto presenta desafíos, puesto que el
-lenguaje común debe ser capaz de captar las características de ambos lenguajes a traducir, sumándole también la posibilidad de captar características de terceros lenguajes. Esto es de gran utilidad cuando se quiere incoporar un nuevo lenguaje al flujo de trabajo ya que al poseer dos o más lenguajes conectados a una Interlingua, el trabajo necesario para agregar un nuevo lenguaje a la traducción recae solamente en realizar la correcta transformación del nuevo lenguaje a la Interlingua [Fig \ref{fig:traduccion}].
-
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.6\textwidth]{Graphics/traduccion.png}
-    \caption{Métodos de Traducción Semánticos}
-    \label{fig:traduccion}
-\end{figure}
-
-\subsection{Basada en métodos estadísticos}\label{subsection:state-of-the-art:traduccion:stats}
-Entre las categorías de estos métodos podemos encontrar las traducciones basadas en:
-\begin{itemize}
-\item palabra o traducción léxica, asignando una palabra a una o varias palabras del lenguaje objetivo en conjunto con cierta probabilidad de que sea la traducción correcta [\cite{koehn2009statistical}].
-\item frases. Similar a la basada en palabras, pero utiliza una secuencia
-de ellas como unidad de traducción. Se entrena a partir de cada par de oraciones de un corpus paralelo para así seleccionar la frase de manera exitosa [\cite{koehn2003statistical}].
-\item sintaxis. Comparte la misma naturaleza de la anterior pero utilizando frases sintácticamente corrrectas mediante árboles parciales de análisis sintácticos[\cite{williams2016syntax}].
-\item jerarquía de frases. Una combinación de las dos anteriores [\cite{chiang2005hierarchical}].
-\end{itemize}
-
-\subsection{Basada en métodos de inteligencia artificial y aprendizaje de máquinas}\label{subsection:state-of-the-art:traduccion:maquina}
-Dado que estos métodos son ampliamente aplicados en el procesamiento del lenguaje natural no es de extrañar que los sistemas actuales de traducción automática contengan modelos de redes
-neuronales artificiales [\cite{koehn2017neural}]. 
-
-Los basados en redes neuronales recurrentes convencionales (RNN por
-sus siglas en inglés) y las redes de gran memoria de corto plazo (LSTM por sus siglas
-en inglés), como se verá más adelante en este capítulo son muy usados en los sistemas de traducción automática. La gran virtud de este tipo  de
-redes neuronales es la habilidad de capturar el contexto de las oraciones debido a sus
-estructuras de memoria [\cite{sutskever2014sequence}].
-
-A pesar de la gran relevancia que han tomado estos métodos basados en redes neuronales  [\cite{garje2013survey}], los relacionados con las traducciones automáticas basadas en métodos estadísticos y/o semánticos son aún los más abundantes.
 
 
 \section{Tecnología de avatares}\label{section:state-of-the-art:avatars}
@@ -183,7 +129,7 @@ A pesar de la gran relevancia que han tomado estos métodos basados en redes neu
 
 La traducción automática de lenguas de señas, aplicando la tecnología de generación de avatares, ha sido empleada en proyectos como ViSiCAST  y eSIGN, apoyados por la Unión Europea [\cite{visicast_at_uea_2021}] [\cite{esign_at_uea_2021}]. 
 
-Se utilizan para traducir de las lenguas habladas a las lenguas de señas, el problema que se aborda en este trabajo.
+Se utilizan para traducir de las lenguas habladas a las lenguas de señas, lo cual solamente concierne la parte de el avatar en sí.
 
 Las animaciones para las señas individuales son generadas basándose
 en las señas no manuales de datos complementarios y en señas individuales. 
@@ -197,7 +143,7 @@ como resultado de un modelo de aprendizaje de máquina [\cite{nguyen2021automati
 Otro de los usos que tienen estos métodos es lograr el anonimato en los videos y cabe remarcar que  son nuevos comparándolos relativamente con otros métodos de traducción automática de lenguas de señas [\cite{kang2010effect}] [\cite{saragih2011real}].
 
 Uno de los más grandes desafíos es que los avatares luzcan como humanos. En diversos estudios se comparan los gestos de los avatares con los gestos de los
-humanos incluyendo algunos trabajos que han obtenido buenos resultados en Reino Unido en cuanto a generar dichos avatares con rasgos humanos[\cite{stoll2018sign}] y usando el mismo corpus del trabajo anterior en Corea se han logrado avances en un enfoque no autorregresivo para lograr resultados incluso mejores[\cite{hwang2021non}].
+humanos incluyendo algunos trabajos que han obtenido buenos resultados en Reino Unido en cuanto a generar dichos avatares con rasgos humanos[\cite{stoll2018sign}] y  en Corea, usando el mismo corpus del trabajo anterior, se han logrado avances en un enfoque no autorregresivo para lograr resultados incluso mejores[\cite{hwang2021non}].
 
  Entre las tecnologías más utilizadas para la generación de avatares por animación se encuentran:
  \begin{itemize}
@@ -210,8 +156,7 @@ humanos incluyendo algunos trabajos que han obtenido buenos resultados en Reino 
  
  Se han desarrollado lenguajes de marcado para automatizar la generación de avatares de una forma dinámica y flexible [\cite{latoschik2017effect}] [\cite{aneja2019high}].
 
-El estado del arte en la generación de avatares no está completamente automatizado, la mayoría de las partes del proceso de generación incluyen intervención humana
-para lograr buenos resultados.
+El estado del arte en la generación de avatares no está completamente automatizado, la mayoría de las partes del proceso de generación incluyen intervención humana para lograr buenos resultados.
 
 Gran parte de las investigaciones miden la calidad de las animaciones de avatares de forma perceptual y de estudios comprensivos con participantes sordos-mudos, incluyendo investigaciones metodológicas y recursos compartidos [\cite{huenerfauth2006generating}] [\cite{kacorri2017regression}].
 
