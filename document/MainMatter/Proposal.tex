@@ -1,5 +1,5 @@
 \chapter{Propuesta}\label{chapter:proposal}
-En esta sección se abordan los problemas principales presentados y la solución encontrada, para cada uno, en las respectivas secciones y se profundiza sobre nuevos problemas hallados, los cuales fueron resueltos para un mejor efecto final. Por otra parte, se proponen formas de facilitar la utilización e inter-operabilidad de la propuesta presentada. 
+En esta sección se abordan los problemas principales presentados y la solución encontrada, para cada uno, en las respectivas secciones. Se profundiza sobre nuevos problemas hallados, los cuales fueron resueltos para un mejor efecto final. Por otra parte, se proponen formas de facilitar la utilización e inter-operabilidad de la propuesta presentada. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MOSTRAR FOTO DE CADA PROBLEMA
@@ -12,14 +12,14 @@ En esta sección se abordan los problemas principales presentados y la solución
 \label{f:enfoque_esquema}
 \end{figure}
 
-Se utilizara un enfoque basado en la interpolación de movimiento para lograr la correcta concatenación y fluidez para la generación gráfica de señas. Dado un conjunto de señas unitarias se deberá efectuar un correcto procesamiento de las mismas y lograr unir varias de ellas en un video de manera fluida, haciendo así posible la generación de señas [véase Fig \ref{f:enfoque_esquema}]. 
+Se utilizará un enfoque basado en la interpolación de movimiento para lograr la correcta concatenación y fluidez para la generación gráfica de señas. Dado un conjunto de señas unitarias se deberá efectuar un correcto procesamiento de las mismas y lograr unir varias de ellas en un video de manera fluida, haciendo así posible la generación de señas [véase Fig \ref{f:enfoque_esquema}]. 
 
 
 
 \section{Definiciones}
 
-Se define como un video $V$ a la secuencia de puntos extraídos. $V_i$
-constituye el i-ésimo cuadro (\emph{frame}) del video. Un frame $F$ está compuesto por una secuencia
+Se define como un vídeo $V$ a la secuencia de cuadros, los cuales no son más que los puntos corporales detectados que se trataran en secciones posteriores. $V_i$
+constituye el i-ésimo cuadro (\emph{frame}) del vídeo. Un frame $F$ está compuesto por una secuencia
 de puntos en el espacio, representando las posiciones de las diferentes partes del cuerpo extraídas,
 $F_i$ representa el i-ésimo punto del frame y $F_{parte}$ representa los puntos asociados a la parte 
 descrita en el frame. 
@@ -53,11 +53,12 @@ Al utilizar datos por primera vez siempre es una buena práctica analizarlos y r
 \subsection{Obteniendo el conjunto de datos}
 De anteriores investigaciones contamos con un corpus de señas unitarias las cuales tienen la siguiente estructura :
 $$
-(r,f,p,c)
+w = (r,f,p,c)
 $$
  
 donde :
 \begin{itemize}
+ \item $w$ es la frase nominal
  \item $r$ indica la representación a la que se accede de dicha frase nominal en el conjunto de datos.
  \item $f$ refiere al frame al que se accede de dicha representación
  \item $p$ representa el punto al que se indexa de dicho frame
@@ -65,6 +66,13 @@ donde :
 \end{itemize}
  
   Una seña unitaria no es más que una secuencia que representa a una frase nominal, dígase como ejemplo la seña que significa  ``américa del sur''. 
+\subsection{Limpieza de los datos}
+
+ A todas las palabras de $w$ se le hace limpieza con expresiones regulares para eliminar la mayoría de imperfecciones posibles en las mismas, como el uso de ``nn'' en lugar de la ``ñ '' y la presencia de números resultado de que al agrupar las frases de varios léxicos distintos, estos se renombraban. Este procesamiento de las palabras es de utilidad para conformar el dataset lo más preciso posible, evitando la repetición de las frases.
+ 
+\subsubsection{Arreglando errores ortográficos}
+
+Durante la creación del conjunto de datos se detectaron, además, frases nominales inexistentes y/o con errores ortográficos, corrigiéndose una pequeña cantidad de estas a mano con un diccionario de palabras, dado que la gran mayoría de los errores ortográficos eran tildes ausentadas.
 
 \subsection{Limitando a una sola seña por frase}
 Luego de tener el conjunto de frases curadas y limpias, quedaba aún el problema de las palabras repetidas que tienen más de una seña, en dependencia de qué léxico del corpus brindado por el CENDSOR se revise.
@@ -73,7 +81,7 @@ Para dicho problema se optó por escoger solamente la primera que apareciera, pu
 \subsection{Detección de problemas}
 A pesar de que todos los videos poseen una estructura similar, manteniéndose un fondo fijo de un color constante, los señantes presentes en los mismos son distintos unos de otros, así como también sus movimientos realizados. Aun refiriéndose a la misma seña, las diferencias no dejaban de aparecer, tanto en estructura corporal, como en velocidad y variaciones de la seña.
 
-En algunos casos, los videos presentaban una secuencia de imágenes sin señante inicialmente, lo que generaba que el modelo dedicado al reconocimiento corporal fallara en dicha tarea, devolviendo un conjunto de ceros, en esos cuadros (frames). Algo similar, ocurría cuando no se detectaban bien las manos del intérprete (ya sea por salirse de la ventana de enfoque de la cámara o encontrarse de forma perpendicular a la misma), haciendo que estas no aparezcan en algún que otro frame.
+En algunos casos los videos presentaban una secuencia de imágenes sin señante inicialmente, lo que generaba que el modelo dedicado al reconocimiento corporal fallara en dicha tarea, devolviendo un conjunto de ceros, en esos cuadros (frames). Algo similar, ocurría cuando no se detectaban bien las manos del intérprete (ya sea por salirse de la ventana de enfoque de la cámara o encontrarse de forma perpendicular a la misma), haciendo que estas no aparezcan en algún que otro frame.
 
 Para el primer caso la solución fue, sencillamente, no tomar en cuenta los frames que todos sus puntos fueran nulos; mientras que el segundo caso no era tan trivial puesto que, a pesar de no tener las manos, el cuerpo si se detecta y proporciona información importante del movimiento del señante por lo que se decidió dejar dichos conjuntos para una posterior revisión.
 
@@ -87,13 +95,6 @@ Al analizar los datos se encontraron varios problemas:
 	\item El video contiene frames en los cuales no se realiza ningún movimiento.
 \end{itemize}
 
-\subsection{Limpieza de los datos}
-
- A todas las palabras se le hace limpieza con expresiones regulares para eliminar la mayoría de imperfecciones posibles en las palabras, el uso de ``nn'' en lugar de la ``ñ '' y la presencia de números puesto que al agrupar las frases de varios léxicos distintos, estos se renombraban. Este procesamiento de las palabras es de utilidad para conformar el dataset lo más preciso posible, evitando la repetición de las frases.
- 
-\subsubsection{Arreglando errores ortográficos}
-
-Durante la creación del conjunto de datos se detectaron, además, frases nominales inexistentes y/o con errores ortográficos, corrigiéndose una pequeña cantidad de estas a mano con un diccionario de palabras, dado que la gran mayoría de los errores ortográficos eran tildes ausentadas.
 
 \section{Problema de la visualización de los datos}
 Los datos ya procesados, del trabajo de Gutiérrez-González \brackcite{leynier-lsc-2021}, son solamente arreglos de dimensión (número de interpretaciones de la seña, (número de frames de la seña,  número total de puntos * 3)), lo cual no facilita  interpretar o detectar posibles problemas. Para solventarlo se recurrió a graficar los puntos en un espacio tridimensional. Se realizaron las transformaciones pertinentes (rotación por el eje z y usando un grado de elevación de 90 grados)  para que se visualizara de frente al espectador, permitiendo, al tener guardada información de las uniones, la visualización de líneas entre dichos puntos espaciales.
@@ -106,7 +107,7 @@ Los datos ya procesados, del trabajo de Gutiérrez-González \brackcite{leynier-
 \end{figure}
 
 
-Se utilizan solamente los puntos del cuerpo y de las manos obtenidos a través de la investigación antes mencionada. Se constan de 67 puntos espaciales siendo 25 del cuerpo y la cabeza (obviando el tren inferior de puntos), 21 para la mano derecha e ídem para la mano izquierda [Fig \ref{fig:points}]. 
+Se utilizan solamente los puntos de la cabeza, cuerpo y de las manos obtenidos a través de la investigación antes mencionada. Se constan de 67 puntos espaciales siendo 25 del cuerpo y la cabeza (obviando el tren inferior de puntos), 21 para la mano derecha e ídem para la mano izquierda [Fig \ref{fig:points}]. 
 
 \begin{figure}[ht!]
     \centering
@@ -172,8 +173,8 @@ luego de la desaparición. Para esto se define el operador interpolación $I$, e
 puntos de partida y los de llegada, y un número representando la cantidad de elementos a devolver uniformemente
 escogidos en el intervalo a interpolar. El resultado de aplicar 
 $I(V[i]_{mano\_izquierda}, V[i + k]_{mano\_izquierda}, k - 1)$ es el conjunto interpolado de $k-1$ frames 
-entre los frames $i$ e $i+k$. Al aplicar este método en cada intervalo en los cuales no estaba definida las manos 
-se llenan estos huecos.
+entre los frames $i$ e $i+k$. Al aplicar este método en cada intervalo en los cuales no estaban definidas las manos 
+se llenan estos ``huecos''.
 \subsection{Frames extremos}
 En el segundo caso no se puede realizar la interpolación, debido a que no existe un conjunto de llegada o de partida. Al probar con distintos conjuntos de señas, resaltó el hecho de que las señas que comenzaban sin manos, durante un largo período de tiempo, causaban errores y fallos en la solución de la sección \ref{section:proposal:fluidez}.  Por lo que la forma de resolver dicho inconveniente devino del uso de una mano falsa, como si de una prótesis se tratara, la cual se compone del mismo número de puntos de una mano real y la misma fue situada gracias a que el cuerpo contiene puntos coincidentes para este mismo propósito.
 
@@ -182,7 +183,7 @@ donde ocurre el problema. Esta mano prótesis necesita ser modificada para que s
 en cuerpo. En primer lugar se realiza una rotación de esta de tal forma que quede alineada con el brazo, luego dicha 
 mano es trasladada hacia la muñeca del cuerpo.
 
-Se realizaron transformaciones espaciales, rotaciones y se seleccionaron matrices específicas para operar con los puntos de la mano falsa y así obtener su homologa contraria, además de permitir ajustarla al plano regido por el codo, la muñeca y los tres puntos coincidentes. Todo este conjunto de operaciones, sumado al hecho de utilizar la proporción de cuanto mide el antebrazo respecto a la medida desde la muñeca y la base del dedo medio, permitieron el correcto estiramiento y adaptación de la mano falsa a las distintas estructuras corporales evidenciadas en el conjunto de datos.
+Se realizaron transformaciones espaciales, rotaciones y se seleccionaron matrices específicas para operar con los puntos de la mano falsa y así obtener su homóloga contraria, además de permitir ajustarla al plano regido por el codo, la muñeca y los tres puntos coincidentes. Todo este conjunto de operaciones, sumado al hecho de utilizar la proporción de cuanto mide el antebrazo respecto a la medida desde la muñeca y la base del dedo medio, permitieron el correcto estiramiento y adaptación de la mano falsa a las distintas estructuras corporales evidenciadas en el conjunto de datos.
 
 \begin{align}
 \begin{split}
@@ -224,11 +225,11 @@ V = I(V_1[n], V_2[0], frames\_de\_intercambio)
 \end{equation}
 
 Se observa que hace falta conocer la cantidad de $frames\_de\_intercambio$, este valor debe depender de la diferencia
-entre $V_1[n]$ y $V_2[0]$ ya que vectores parecidos deben de tener menos frames de transición que vectores más distantes [véase Fig \ref{f:fluidez_variable}).
-Se define diferencia como la norma de la diferencia entre los vectores.
+entre $V_1[n]$ y $V_2[0]$ ya que vectores parecidos deben de tener menos frames de transición que vectores más distantes [véase Fig \ref{f:fluidez_variable}].
+Se define diferencia como la norma euclideana de la diferencia entre los vectores.
 
-A criterio del autor se seleccionaron unos ejemplos en donde se sabía la variabilidad y la cantidad de frames buenas para el segmento a interpolar. Para obtener este valor se observaron varios valores de diferencia entre vectores y se decidió la cantidad de frames de 
-intercambio para dicha diferencia [véase Tabla \ref{table:intercambio_frame}], con varias muestras se creó una función mediante interpolación de estos valores la cual 
+Se seleccionaron unos ejemplos en donde se sabía la variabilidad y la cantidad de frames buenas para el segmento a interpolar. Para obtener este valor se observaron varios valores de diferencia entre vectores y se decidió la cantidad de frames de 
+intercambio para dicha diferencia [véase Tabla \ref{table:intercambio_frame}]. Con varias muestras se creó una función mediante interpolación de estos valores la cual 
 permite conocer el valor de $frames\_de\_intercambio$ dada la diferencia.
 
 
@@ -289,7 +290,7 @@ permite conocer el valor de $frames\_de\_intercambio$ dada la diferencia.
 	\caption{Ejemplo de la diferencia entre extremos consecutivos de varios tokens, evidenciándose su variabilidad.}
 	\label{f:fluidez_variable}
 \end{figure}
-El hecho de usar uno u otro método de interpolación, implica que se seleccionan distintas cantidades de puntos, como se explica en el estado del arte [véase sección \ref{section:state-of-the-art:interpolation}] . Siendo la más dinámica, con una menor cantidad de puntos, la interpolación lineal, pero, mínimo, se cuenta con 24 frames ya que equivalen a 1 segundo de un video de 24 fps(frames por segundo), lo cual es bastante estándar.
+El hecho de usar uno u otro método de interpolación, implica que se seleccionan distintas cantidades de puntos, como se explica en el estado del arte [véase sección \ref{section:state-of-the-art:interpolation}]. Siendo la más dinámica, con una menor cantidad de puntos, la interpolación lineal, pero, se pueden utilizar métodos de interpolación que requieran más puntos ya que, mínimo, se cuenta con 24 fps (frames por segundo) en cada vídeo, lo cual es bastante estándar.
 
 
 \subsection{Problema del tamaño del señante variable durante el video}

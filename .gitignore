@@ -29,8 +29,8 @@ codes/.python-version
 resultados
 graficas
 problemas
-codes/make_bvh_files.blend
-codes/make_bvh_files.blend1
+*.blend
+*.blend1
 *.zip
 dataset.json
 dataset2.json

@@ -166,7 +166,7 @@ for dirpath,dirnames,filenames in os.walk(root_tesis/cendsor_path):
 En el caso de los gestos, existen en el corpus frames en los cuales los modelos no detectaban nada y por tanto estos devolvían (0,0,0) para todos los puntos de interés de ese frame. Por tanto, se hace uso de la biblioteca \textit{json} para cargar el archivo y de la biblioteca numpy para realizar la limpieza de una manera más cómoda y rápida.
 Luego de obtener la máscara (filtro) con la información de los frames vacíos, simplemente se indexa en el arreglo numpy guardando su resultado como si fuera ahora el arreglo original.
 
-Como información adicional, se guarda el diccionario tanto en la nube como en el directorio local para su mejor aprovechamiento y eliminarnos pasos extras a la hora de probar el modelo.
+Como información adicional, se guarda el diccionario tanto en la nube como en el directorio local para su mejor aprovechamiento y eliminar pasos extras a la hora de probar la propuesta.
 
 
 
@@ -181,7 +181,7 @@ Como información adicional, se guarda el diccionario tanto en la nube como en e
 
 
 \subsection{Creación de las Clases}
-En esta subsección se trataran de forma más especifica las clases utilizadas en la implementación de la propuesta.
+En esta subsección se trataran de forma más específica las clases utilizadas en la implementación de la propuesta.
 
 \subsubsection{Clase TokenLSC}
 
@@ -328,7 +328,7 @@ class TokenLSC:
 Una vez normalizado un token no se vuelve a normalizar, a menos, que el usuario decida ejecutarlo por su cuenta. Cada vez que un token es creado, es normalizado por defecto, dejando a elección de quien lo use activar o no los argumentos pertinentes durante la construcción.
 
 \subsubsection{Método para el recorte de movimiento}
-El método para el recorte de movimiento [véase Código \ref{code:tokenlsc:cropMovement}] por inactividad utiliza la integración numérica para  encontrar la cantidad de movimiento para un intervalo dado. Es posible recortar para mantener un determinado porcentaje del movimiento total original de la seña a través del argumento movement$\_{}$percentage (por defecto es un 80 \% del movimiento total el que se mantiene). Además, puede escogerse que a qué tipo de parte del cuerpo se le quiere hacer énfasis, lográndose así un recorte más efectivo a las necesidades del usuario. Los argumentos \textit{difference$\_{}$mapping} y  \textit{to$\_{}$maximize} son las funciones \textit{lambda} encargadas de determinar como se cuantifica el movimiento y en base a que criterio se maximiza. Cómo último argumento se deja a elección del usuario escoger entre la integración por el método de Simpson o por el método de Trapezoides.
+El método para el recorte de movimiento [véase Código \ref{code:tokenlsc:cropMovement}] por inactividad utiliza la integración numérica para  encontrar la cantidad de movimiento para un intervalo dado. Es posible recortar para mantener un determinado porcentaje del movimiento total original de la seña a través del argumento movement$\_{}$percentage (por defecto es un 80 \% del movimiento total el que se mantiene). Además, puede escogerse que a qué tipo de parte del cuerpo se le quiere hacer énfasis, lográndose así un recorte más efectivo a las necesidades del usuario. Los argumentos \textit{difference$\_{}$mapping} y  \textit{to$\_{}$maximize} son las funciones \textit{lambda} encargadas de determinar como se cuantifica el movimiento y en base a que criterio se maximiza. Como último argumento, se deja a elección del usuario escoger entre la integración por el método de Simpson o por el método de Trapezoides.
 \begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Método crop$\_{}$movement de la clase TokenLSC}, label={code:tokenlsc:cropMovement}]
 def crop_movement(self,
                       movement_percentage=.8,
@@ -399,7 +399,7 @@ Una vez escogidos los puntos para enfocar el recorte, se computan los valores de
 
 \subsubsection{Métodos para la unión de tokens}
  
- Para la concatenación de tokens [véase Código \ref{code:tokenlsc:unionmethods}], se redefine el operador suma de la clase \textit{TokenLSC}, lográndose así una mejor inter-operabilidad entre los tokens de lengua de señas. Una vez 2 tokens son adicionados, el método join$\_{}$tokens es llamado con los mejores valores por defecto, escogidos de forma perceptual por el autor. El método join$\_{}$tokens recibe los tokens a ser unidos, así como la cantidad de esqueletos a ser escogidos del primer token y del segundo, con prev$\_{}$cut y next$\_{}$cut respectivamente. La cantidad de esqueletos a ser creada también es uno de los parámetros a ser escogidos por el usuario con la variable amount$\_{}$of$\_{}$skeletons para garantizar una mayor adecuación a las diversas necesidades futuras que se puedan presentar. Como último argumento se puede escoger el método de interpolación a ser utilizado, por defecto este es lineal dado que es necesario para solventar varias de las problemáticas explicadas en el capítulo anterior.
+ Para la concatenación de tokens [véase Código \ref{code:tokenlsc:unionmethods}], se redefine el operador suma de la clase \textit{TokenLSC}, lográndose así una mejor inter-operabilidad entre los tokens de lengua de señas. Una vez 2 tokens son adicionados, el método \textit{join$\_{}$tokens} es llamado con los mejores valores por defecto, escogidos de forma perceptual. El método \textit{join$\_{}$tokens} recibe los tokens a ser unidos, así como la cantidad de esqueletos a ser escogidos del primer token y del segundo, con \textit{prev$\_{}$cut} y \textit{next$\_{}$cut} respectivamente. La cantidad de esqueletos a ser creada también es uno de los parámetros a ser escogidos por el usuario con la variable \textit{amount$\_{}$of$\_{}$skeletons} para garantizar una mayor adecuación a las diversas necesidades futuras que se puedan presentar. Como último argumento se puede escoger el método de interpolación a ser utilizado, por defecto este es lineal dado que es necesario para solventar varias de las problemáticas explicadas en el capítulo anterior.
  
 \begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Método utilizados para la unión de tokens TokenLSC}, label={code:tokenlsc:unionmethods}] 
 @staticmethod
@@ -487,7 +487,7 @@ Este método escoge una serie de esqueletos del final de la primera lista \texti
 \subsubsection{Método de animación con matplotlib}
 Poder revisar como se unen o efectúan los distintos tokens, mediante los métodos descritos en subsecciones anteriores, es de vital importancia para determinar el correcto funcionamiento de los mismos. Es por dicha razón que utilizando la biblioteca de matplotlib, se consigue de manera efectiva animar los distintos tokens lo cual mejora la experiencia durante la evaluación durante los experimentos.
 
-El método \textit{animate} [véase Código \ref{code:tokenlsc:animate}] recibe la cantidad de fps (frames por segundo) a utilizar como medida de velocidad de la animación, lo cual es usual en este campo. Las dimensiones de la figura tanto como el ángulo de elevación y de azimuth se encuentran en los valores óptimos por defecto para la mejor experiencia visual del usuario, aunque este puede utilizar otros valores para dichos argumentos modificando los parámetros \textit{figsize}, \textit{elev}, \textit{angle}. De igual manera, es posible visualizar el índice numérico de cada punto, así como las uniones entre los puntos utilizando los argumentos booleanos \textit{text} y \textit{joints}
+El método \textit{animate} [véase Código \ref{code:tokenlsc:animate}] recibe la cantidad de fps (frames por segundo) a utilizar como medida de velocidad de la animación, lo cual es usual en este campo. Las dimensiones de la figura tanto como el ángulo de elevación y de azimut se encuentran en los valores óptimos por defecto para la mejor experiencia visual del usuario, aunque este puede utilizar otros valores para dichos argumentos modificando los parámetros \textit{figsize}, \textit{elev}, \textit{angle}. De igual manera, es posible visualizar el índice numérico de cada punto, así como las uniones entre los puntos utilizando los argumentos booleanos \textit{text} y \textit{joints}
 
 \begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Método animate de la clase TokenLSC}, label={code:tokenlsc:animate}] 
 def animate(self, fps=30, figsize=(7.0, 3.5), elev=90, angle=1, dims=None, text=False, joints=True):
@@ -589,7 +589,7 @@ El método genérico import$\_{}$from$\_{}$path analiza la extensión del direct
 
 \subsubsection{Métodos para exportar los tokens}
 
-Como primer método de exportación contamos con export$\_{}$to$\_{}$json, el cual recibe como argumento solamente la ruta al archivo donde se desea guardar el token. Otro de los métodos con que se cuenta es el método de exportar a un archivo BVH de captura de movimiento, el cual se logra exportar pero con fallas dado el desconocimiento del autor acerca de los ángulos de rotación requeridos [véase Código \ref{code:tokenlsc:exports}].
+Como primer método de exportación se cuenta con \textit{export$\_{}$to$\_{}$json}, el cual recibe como argumento solamente la ruta al archivo donde se desea guardar el token. Otro de los métodos con que se cuenta es el método de exportar a un archivo BVH de captura de movimiento, el cual se logra exportar pero con fallas dado el desconocimiento del autor acerca de los ángulos de rotación requeridos [véase Código \ref{code:tokenlsc:exports}].
 
 \begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Métodos estático para exportar tokens de la clase TokenLSC}, label={code:tokenlsc:exports}] 
  	def export_to_json(self,path:str):
@@ -726,9 +726,7 @@ Para este segundo experimento se evalúa la efectividad del recorte por inactivi
 Este experimento demostró excelentes resultados, jugando un papel especial el hecho de escoger de manera efectiva las funciones que cuantifican el movimiento, la función a maximizar y el porcentaje de movimiento total a mantener. Valores distintos a los escogidos por defecto pueden devenir en exceso de recorte o ninguno.
 
 \subsection{Experimento 3}
-Para este tercer experimento se decide valorar el correcto posicionamiento y ajuste de la mano falsa, así como la interpolación en la suma entre dos tokens. Para ello se eligen al token al correspondiente a la seña de aborto y de la seña amar, puesto que este último carece de manos en ambos extremos en su token original sin normalizar ni realizarle recorte por inactividad.
-  
-Se evaluó de positivo el uso de las manos falsas y la interpolación interna para solucionar el problema de las manos faltantes. Como se ve en la Fig \ref{f:no_manos_faltantes}.
+Para este tercer experimento se decide valorar el correcto posicionamiento y ajuste de la mano falsa, así como la interpolación en la suma entre dos tokens. Para ello se eligen al token al correspondiente a la seña de aborto y de la seña amar, puesto que este último carece de manos en ambos extremos en su token original sin normalizar ni realizarle recorte por inactividad. Se evaluó de positivo el uso de las manos falsas y la interpolación interna para solucionar el problema de las manos faltantes como se ve en la Fig \ref{f:no_manos_faltantes}.
 
 \begin{figure}[t]
 \centering
@@ -765,7 +763,7 @@ Se evaluó de positivo el uso de las manos falsas y la interpolación interna pa
 	\label{f:no_manos_faltantes}
 	\end{figure}
 	
-Además de que uno de los mejores resultados obtenidos durante la experimentación fue la secuencia de interpolación entre 2 señas con finales tan marcados. Véase la Fig \ref{f:seq_interpol} para una mejor apreciación.
+Además, uno de los mejores resultados obtenidos durante la experimentación fue la secuencia de interpolación entre 2 señas con finales tan marcados [véase la Fig \ref{f:seq_interpol} para una mejor apreciación].
 	\begin{figure}[t]
 \centering
 	\begin{subfigure}[t]{0.3\textwidth}

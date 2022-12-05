@@ -5,23 +5,23 @@ La lengua de señas es el principal medio de comunicación para los sordos. Es u
 Las lenguas de señas son todas diferentes, no son inteligibles entre sí, no son universales y tienen su propia gramática y sintaxis, las cuales difieren de las del lenguaje hablado.
 
 \subsection{Escritura de señas Sutton}\label{subsection:state-of-the-art:sw}
-Sutton SignWriting, comúnmente conocida como SignWriting, es un sistema de escritura de lenguas de señas desarrollado en 1974 por Valerie Sutton, una bailarina que, dos años antes, había desarrollado la escritura danzaria (DanceWriting). Es muy específica y visualmente icónica, tanto en las formas de los personajes, que son imágenes abstractas de las manos, la cara y el cuerpo, como en su disposición espacial en la página, que no sigue un orden secuencial como las letras que forman las palabras escritas. Algunas formas estandarizadas más nuevas se conocen como el Alfabeto Internacional de Escritura por Señas (ISWA, por sus siglas en inglés).
+\textit{Sutton SignWriting}, comúnmente conocida como \textit{SignWriting}, es un sistema de escritura de lenguas de señas desarrollado en 1974 por Valerie Sutton, una bailarina que, dos años antes, había desarrollado la escritura danzaria (DanceWriting). Es muy específica y visualmente icónica, tanto en las formas de los personajes, que son imágenes abstractas de las manos, la cara y el cuerpo, como en su disposición espacial en la página, que no sigue un orden secuencial como las letras que forman las palabras escritas. Algunas formas estandarizadas más nuevas se conocen como el Alfabeto Internacional de Escritura por Señas (ISWA, por sus siglas en inglés).
 
 \subsubsection{Símbolos}\label{subsubsection:state-of-the-art:sl:symbols}
 
-En SignWriting, se utiliza una combinación de símbolos icónicos para formas de manos, orientación, ubicaciones corporales, expresiones faciales, contactos y movimiento\brackcite{thiessen2011signwriting}\brackcite{suttonsignwriting} para representar palabras en lengua de señas.
+En \textit{SignWriting} se utiliza una combinación de símbolos icónicos para formas de manos, orientación, ubicaciones corporales, expresiones faciales, contactos y movimiento\brackcite{thiessen2011SignWriting}\brackcite{suttonsignwriting} para representar palabras en lengua de señas.
 
 
-La cantidad de símbolos es extensa y, a menudo, brinda múltiples formas de escribir un solo signo. Así como tomó muchos siglos para que la ortografía de los diversos idiomas se estandarizara, la ortografía en SignWriting aún no está estandarizada para ninguna lengua de señas.
+La cantidad de símbolos es extensa y, a menudo, brinda múltiples formas de escribir un solo signo. Así como tomó muchos siglos para que la ortografía de los diversos idiomas se estandarizara, la ortografía en \textit{SignWriting} aún no está estandarizada para ninguna lengua de señas.
  Sutton originalmente la diseñó para que se escribiera horizontalmente (de izquierda a derecha), como en su idioma nativo, y desde el punto de vista del observador, pero luego lo cambió a vertical (de arriba a abajo) y desde el punto de vista del firmante, para ajustarse a los deseos de los escritores sordos.\brackcite{signwriting}
  \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.6\textwidth]{Graphics/arreglo_glifos_sutton.png}
-    \caption{Ejemplo de una secuencia de glifos del sistema de escritura de señas Sutton SignWriting. De manera vertical cada una de las cuatro secciones representa una seña}
+    \caption{Ejemplo de una secuencia de glifos del sistema de escritura de señas \textit{Sutton SignWriting}. De manera vertical cada una de las cuatro secciones representa una seña}
     \label{fig:arreglo_glifos_sutton}
 \end{figure}
  
- Dado que SignWriting representa la formación física real de los signos en lugar de su significado [Fig \ref{fig:arreglo_glifos_sutton}], no se requiere ningún análisis fonético o semántico de un idioma para escribirlo. Una persona que ha aprendido el sistema puede ``sentir'' un signo desconocido de la misma manera que una persona que habla inglés puede ``pronunciar'' una palabra desconocida escrita en el alfabeto latino, sin siquiera saber qué significa el signo.\brackcite{signwriting}
+ Dado que \textit{SignWriting} representa la formación física real de los signos en lugar de su significado [Fig \ref{fig:arreglo_glifos_sutton}], no se requiere ningún análisis fonético o semántico de un idioma para escribirlo. Una persona que ha aprendido el sistema puede ``sentir'' un signo desconocido de la misma manera que una persona que habla inglés puede ``pronunciar'' una palabra desconocida escrita en el alfabeto latino, sin siquiera saber qué significa el signo.\brackcite{signwriting}
 
 Las palabras pueden estar escritas desde el punto de vista del firmante o del espectador. Sin embargo, casi todas las publicaciones utilizan el punto de vista del firmante y asumen que la mano derecha es dominante. Existen varios símbolos de puntuación que corresponden a comas, puntos, signos de interrogación y exclamación y otros símbolos de puntuación de otras escrituras. Estos se escriben entre signos, y las líneas no se rompen entre un signo y su siguiente símbolo de puntuación.
 
@@ -40,7 +40,7 @@ labios y el cuerpo  son, en esencia, lo utilizado en las lenguas de señas para 
     \label{fig:mediapipe}
 \end{figure}
 
-Las diferentes vías de reconocimiento de señas aportan información valiosa para la comprensión kinética, estructural y lingüistica de cada lengua de señas. Esto ayuda en la comprensión en un sentido, del oyente hacia el hipoacúsico, ya que este último es entendido por el oyente pero no en el otro sentido. Es por ello que se hace necesario el uso de formas de reforzar el entendimiento de la persona sorda hacia el oyente.
+Las diferentes vías de reconocimiento de señas aportan información valiosa para la comprensión cinética, estructural y lingüística de cada lengua de señas. Esto ayuda en la comprensión en un sentido, del oyente hacia el hipoacúsico, ya que este último es entendido por el oyente pero no en el otro sentido. Es por ello que se hace necesario el uso de formas de reforzar el entendimiento de la persona sorda hacia el oyente.
 
 \section{Tecnología de avatares}\label{section:state-of-the-art:avatars}
 
@@ -105,7 +105,7 @@ Por lo tanto, para engañar al discriminador, no basta con que el generador de C
 La traducción de imagen a imagen mediante redes generativas adversariales ha suscitado una gran atención en la investigación sobre el aprendizaje supervisado y no supervisado. Las GAN de ruido a imagen generan imágenes realistas a partir de muestras aleatorias de ruido, mientras que las GAN de imagen a imagen generan imágenes diversas a partir de imágenes. Se han propuesto muchas variantes de GAN, que han logrado buenos resultados en este tipo de tareas de traducción.
 El objetivo de la traducción de imágenes es aprender el mapeo del dominio de la imagen de origen al de la imagen de destino, cambiando el estilo o algunas otras propiedades mientras mantiene el contenido de la imagen\brackcite{wang2020state}.
 \subsubsection{Texto a imágenes}
-En esta formulación, en lugar de utilizar ruido u otra imagen como entrada para el Generador, se utiliza una descripción textual de lo que se desea generar. Dicho texto es transformado primero en una incrustación (embedding) de texto, el cual se concatena con el vector de la imagen a generar y luego se da como entrada al Generador.  Esta formulación ayudará al Generador a crear imágenes alineadas con la descripción de entrada en lugar de generar imágenes aleatorias\brackcite{wang2020state}.
+En esta formulación, en lugar de utilizar ruido u otra imagen como entrada para el Generador, se utiliza una descripción textual de lo que se desea generar. Dicho texto es transformado primero en una incrustación (\textit{embedding}) de texto, el cual se concatena con el vector de la imagen a generar y luego se da como entrada al Generador.  Esta formulación ayudará al Generador a crear imágenes alineadas con la descripción de entrada en lugar de generar imágenes aleatorias\brackcite{wang2020state}.
 
 \subsection{Otras formas de generación de imágenes}
 Existen otras formas de generación de imágenes como el \textit{image inpainting}, la cual es una técnica de restaurar y reconstruir partes de una imagen basadas en la información de fondo de la misma. La edición de imágenes, la cual manipula principalmente las imágenes a través del color e interacciones geométricas para completar tareas como la deformación y la mezcla de imágenes. Otra forma es la síntesis de imágenes humanas, la cual tiene como objetivo manipular la apariencia visual de las imágenes de los personajes, transfiriendo la pose de un personaje a la pose objetivo, que puede calcularse a partir de otros personajes.\brackcite{wang2020state}
@@ -119,7 +119,7 @@ Además, en el último año, se ha visto un fuerte incremento de la adopción ma
     \label{fig:stable-diffusion}
 \end{figure}
 
-A pesar de poder ser capaces de hacer más realistas los vídeos de forma aislada (a través del uso de img2img) sigue siendo necesaria encontrar la forma de concatenar de manera fluida varias señas.
+A pesar de, poder ser capaces de hacer más realistas los vídeos de forma aislada (a través del uso de img2img), sigue siendo necesaria encontrar la forma de concatenar de manera fluida varias señas. La forma usual de concatenación de varias imágenes, para obtener una calidad y fluidez realista en los videos generados, es a través de distintas técnicas de interpolación. Su uso en animaciones y generación de vídeo permite un resultado fluido y natural a la percepción de los usuarios y expectadores.
 
 \section{Interpolación}\label{section:state-of-the-art:interpolation}
 La interpolación es una forma de estimar datos nuevos en función de datos ya conocidos. Una técnica como esta puede ser aplicada para hacer predicciones en el campo de la economía y otras ramas. La dificultad con aplicarla en ese campo es la volatilidad del mismo que, sumado a los errores de precisión de la técnica, han llevado a los economistas a buscar otros métodos.\\
