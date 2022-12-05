@@ -21,3 +21,16 @@
 *.bcf
 *.xml
 *.pdf_tex
+.venv
+docker
+codes/.python-version
+resultados
+graficas
+problemas
+codes/make_bvh_files.blend
+codes/make_bvh_files.blend1
+*.zip
+*.json
+*.mp4
+codes/tesis-generacion-lsc.ipynb
+*.png

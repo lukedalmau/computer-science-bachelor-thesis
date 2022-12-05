@@ -22,11 +22,11 @@
 \RequirePackage{footmisc}
 \RequirePackage{csquotes}
 \RequirePackage[
-	style=apa,
-	citestyle=authoryear,
+  style=numeric,
+  citestyle=numeric,
   hyperref=true,
-	backref=true
-	]{biblatex}
+  backref=true
+  ]{biblatex}
 \RequirePackage[linktocpage,breaklinks,colorlinks,%
                 linkcolor=black,anchorcolor=black,citecolor=black,%
                 filecolor=black,menucolor=black,runcolor=black,%
@@ -85,6 +85,20 @@
   {\usebibmacro{prenote}}
   {\usebibmacro{citeindex}%
    \printtext[bibhyperref]{\usebibmacro{citeyear}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+  
+\DeclareCiteCommand{\brackcite}[\mkbibbrackets]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+    \printtext[bibhyperref]{\usebibmacro{cite}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand*{\brackcite}[\mkbibbrackets]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+    \printtext[bibhyperref]{\usebibmacro{citeyear}}}
   {\multicitedelim}
   {\usebibmacro{postnote}}
 
@@ -223,7 +237,9 @@
     {\Large Tutores: \textbf{\@advisor}} \\
     \vfill
     {\large Trabajo de Diploma \\presentado en opción al título de \\ \@degree} \\
-    \vskip 1cm
+    \vskip 0.25cm
+    \includegraphics[width=2.5cm]{Graphics/qrcode_tesis}
+    \vskip 0.25cm
     \@date
   \end{center}
 }

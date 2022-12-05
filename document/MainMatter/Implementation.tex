@@ -3,94 +3,70 @@ Para poder valorar la viabilidad de la propuesta realizada en este trabajo, es
 necesaria la implementación de un prototipo del modelo explicado en el capítulo
 anterior.
 
+
 \section{Herramientas y tecnologías utilizadas}\label{section:implementation:techs}
 \subsection{Lenguaje de programación Python}
 Python es un lenguaje de programación de propósito general y alto nivel desarrollado por Guido van Rossum en 1991. Su filosofía de diseño enfatiza la legibilidad del código con el uso de sangría significativa. Python se tipifica dinámicamente y tiene incorporado un recolector de basura. Admite múltiples paradigmas de programación, incluida la programación estructurada, orientada a objetos y funcional. La más reciente  versión liberada al momento de realizarse este trabajo es la 3.11 [\cite{python_executive_summary_2022}].
 
 Es altamente empleado para ingeniería y análisis de datos, aprendizaje de máquina
-e inteligencia artificial gracias a sus infinidad de bibliotecas como NumPy, Tensorflow, Keras, Pytorch, SciPy, Pandas y Matplotlib, entre otras creadas tanto por el mismo equipo de trabajo de Python como la propia comunidad. Para desarrollo web cuenta con marcos de trabajo (frameworks) como Django. Es altamente utilizado en la educación al ser de fácil aprendizaje y asimilación logrando así reducir la barrera de entrada al mundo de la programación a todo aquel interesado.
+e inteligencia artificial gracias a sus vasta cantidad de bibliotecas como NumPy, Tensorflow, Keras, Pytorch, SciPy, Pandas y Matplotlib, entre otras creadas tanto por el mismo equipo de trabajo de Python como la propia comunidad. Para desarrollo web cuenta con marcos de trabajo (frameworks) como Django. Es altamente utilizado en la educación al ser de fácil aprendizaje y asimilación logrando así reducir la barrera de entrada al mundo de la programación a todo aquel interesado.
 
  En la actualidad sigue manteniendo el primer puesto de los índices de TIOBE y PYPL ratificando el interés de gran parte de la población y de los empleadores por este lenguaje y las ventajas que ofrece. Grandes organizaciones como Google [\cite{quotes_about_python_2021}], el CERN [\cite{python_the_holy_grail_of_programming_2014}], la NASA [\cite{python_success_stories_2021}], Yahoo [\cite{organizationsusingpython}], Wikipedia, Amazon, Facebook, Instagram [\cite{meta_for_developers_2018}], Spotify, entre otros.
 Para este trabajo se utilizó la versión 3.7 para lograr una retro-compatibilidad
 alta.
 
-
-\subsection{Numpy}
+\subsubsection{numpy}
 Constituye una biblioteca de Python de código abierto, la cual permite generar, tanto vectores como matrices, de grandes dimensiones y operar de manera cómoda y sencilla con ellos [\cite{numpy_2012}].
 Consigue esto gracias a que utiliza internamente el lenguaje C para lograr efectuar de forma rápida operaciones muy costosas entre elevadas dimensiones.
 En las etapas posteriores a la limpiezas de los datos explicada en el capítulo anterior se utiliza Numpy para el trabajo con los datos.
 
-\subsection{Matplotlib}
+\subsubsection{matplotlib}
 Matplotlib es una biblioteca de gráficos creada en 2003 por John D. Hunter para el lenguaje de programación Python y su extensión matemática numérica NumPy. Proporciona una API orientada a objetos para incrustar gráficos en aplicaciones utilizando kits de herramientas GUI de uso general como Tkinter, wxPython, Qt o GTK.
 Es una biblioteca completa para crear visualizaciones estáticas, animadas e interactivas. Matplotlib hace que las cosas fáciles, pues sigan siendo fáciles y las difíciles sean posibles, como lo es crear gráficos con calidad de una publicación y hacer figuras interactivas que puedan hacer zoom, desplazarse, actualizar.
 
-%\subsection{Tensorflow, Keras y Addons}
-%Tensorflow es una biblioteca de software gratuita y de código abierto para el aprendizaje automático de extremo a extremo y la inteligencia artificial desarrollada por el equipo de Google Brain. Se puede usar en una gran variedad de tareas, pero tiene un enfoque particular en el entrenamiento y la inferencia de redes neuronales profundas. Además brinda interfaces de forma oficial para
-%C + +, Haskell, Java, Go, Rust y Python.
-%
-%Keras es una interfaz de alto nivel de Tensorflow gratuita y altamente productiva para resolver problemas enfocados en el aprendizaje profundo.
-%
-%Addons es un repositorio de contribuciones que se ajustan a patrones de API bien establecidos, pero implementan nuevas funciones que no están disponibles en el núcleo de TensorFlow. TensorFlow admite de forma nativa una gran cantidad de operadores, capas, métricas, pérdidas y optimizadores.
-%
-%Para la creación y entrenamiento del modelo de generación de avatares propuesto en la sección \ref{section:proposal:stepbystep} se utilizaron las tecnologías anteriormente mencionadas así como para salvar los pesos del modelo una vez entrenado.
+\subsubsection{scipy}
+SciPy es una biblioteca de Python gratuita y de código abierto que se utiliza para la computación científica y la informática técnica. SciPy contiene módulos para optimización, álgebra lineal, integración, interpolación, funciones especiales, FFT (Transformada Rápida de Fourier), procesamiento de señales e imágenes, solucionadores de ODE (Ecuaciones Diferenciales Ordinarias) y otras tareas comunes en ciencia e ingeniería. Esta creada encima de la biblioteca Numpy anteriormente mencionada y fue desarrollada por la compañía Enthought en el año 2001.
 
-\subsection{Scipy}
-SciPy es una biblioteca de Python gratuita y de código abierto que se utiliza para la computación científica y la informática técnica. SciPy contiene módulos para optimización, álgebra lineal, integración, interpolación, funciones especiales, FFT, procesamiento de señales e imágenes, solucionadores de ODE y otras tareas comunes en ciencia e ingeniería. Esta creada encima de la biblioteca Numpy anteriormente mencionada y fue desarrollada por la compañía Enthought en el año 2001.
 
-\subsection{Google Colaboratory}
-
-Google provee un servicio gratuito en el navegador el cual brinda, de manera temporal, recursos computacionales (CPU,TPU,GPU,RAM,HDD) mientras se haga uso activo de los mismos. En dicha plataforma se le permite al usuario escribir y ejecutar codigo Python en un entorno basado en Jupyter Notebook.Siendo así una herramienta ideal para el aprendizaje de máquinas, el análisis de datos y la educación al posibilitar que personas de pocos recursos puedan acceder de forma fácil a herramientas para el aprendizaje de máquina las cuales muchas de ellas ya vienen incluidas en el entorno o son muy  sencillas de instalar en el mismo.
-Cabe destacar que además del plan gratuito que incluye CPU de última generación, 13 Gb de RAM y 110 Gb de almacenamiento, nos da la posibilidad de utilizar Google Drive para ampliar el almacenamiento y  varios planes de pago para aumentar la capacidad computacional del entorno.
- 
-Todo el trabajo fue llevado a cabo utilizando este servicio para dejar de manera accesible todo el flujo de trabajo.
-
-%\subsection{Gensim}
-%Gensim es una biblioteca gratuita de Python de código abierto para representar documentos como vectores semánticos, de la manera más eficiente (computacionalmente) y sin dolor (humanamente) posible. Está diseñado para procesar textos digitales crudos y sin estructura ("texto sin formato") utilizando algoritmos de aprendizaje automático no supervisados, entre los que se encuentran implementados Word2Vec [\cite{rehurek_lrec}].
-
-%\subsection{Word2Vec}
-%Word2vec es una técnica para el procesamiento del lenguaje natural publicada en 2013. El algoritmo word2vec utiliza un modelo de red neuronal para aprender asociaciones de palabras de un gran corpus de texto. Una vez entrenado, dicho modelo puede detectar palabras sinónimas o sugerir palabras adicionales para una oración parcial. Como su nombre lo indica, word2vec representa cada palabra distinta con una lista particular de números llamada vector. Los vectores se eligen cuidadosamente de modo que capturen las cualidades semánticas y sintácticas de las palabras; como tal, una simple función matemática (similitud de coseno) puede indicar el nivel de similitud semántica entre las palabras representadas por esos vectores.
-%Para este trabajo se utilizará el modelo entrenado en 3 mil millones de vocablos en español. Esto nos dota de una gran herramienta que protege la semántica de las palabras ,como se puede evidenciar en la Fig \ref{fig:word2vec}.
-%
-%\begin{figure}[ht!]
-%    \centering
-%    \includegraphics[width=0.6\textwidth]{Graphics/word2vec.png}
-%    \caption{Grado de aprendizaje de la semántica de Word2Vec en español}
-%    \label{fig:word2vec}
-%\end{figure}
-%
-
-\subsection{difflib}
-Este módulo de Python proporciona clases y funciones para comparar secuencias. Se puede usar, por ejemplo, para comparar archivos y puede producir información sobre diferencias de archivos en varios formatos, incluidos HTML y contexto y diferencias unificadas.
-
- \subsubsection{clase SequenceMatcher}
- Esta es una clase flexible para comparar pares de secuencias de cualquier tipo, siempre que los elementos de la secuencia se puedan modificar. El algoritmo básico es anterior a un algoritmo publicado a fines de la década de 1980 por Ratcliff y Obershelp con el nombre hiperbólico de ''coincidencia de patrones gestálticos'', y es un poco más elegante. La idea es encontrar la subsecuencia coincidente contigua más larga que no contenga elementos ''basura''; estos elementos ''basura'' son los que no son interesantes en algún sentido, como líneas en blanco o espacios en blanco. (El manejo de basura es una extensión del algoritmo de Ratcliff y Obershelp). Luego, la misma idea se aplica recursivamente a las partes de las secuencias a la izquierda y a la derecha de la subsecuencia coincidente. Esto no produce secuencias de edición mínimas, pero tiende a generar coincidencias que ''parecen correctas'' para las personas.
- \subsubsection{get$\_{}$close$\_{}$matches}
- Método para seleccionar la secuencia más similar a una secuencia dada dentro de un vocabulario.
-
-\subsection{Boto3}
-Se utiliza el Kit de desarrollador de software (SDK por sus siglas en inglés) de AWS para Python (Boto3) para crear, configurar y administrar servicios de AWS, como Amazon Elastic Compute Cloud (Amazon EC2) y Amazon Simple Storage Service (Amazon S3). El SDK proporciona una API orientada a objetos, así como acceso de bajo nivel a los servicios de AWS.
+\subsubsection{boto3}
+Se utiliza el Kit de desarrollador de software (SDK por sus siglas en inglés) de AWS (Servicios Web de Amazon) para Python (Boto3) para crear, configurar y administrar servicios de AWS, como Amazon Elastic Compute Cloud (Amazon EC2) y Amazon Simple Storage Service (Amazon S3). El SDK proporciona una API (Interfaz para Programas de Aplicación) orientada a objetos, así como acceso de bajo nivel a los servicios de AWS.
 
 Este SDK es empleado para acceder a los datos.
 
-\subsection{pathlib}
+\subsubsection{pathlib}
 Este es un módulo de Python que ofrece clases que representan rutas de sistemas de archivos con semántica apropiada para diferentes sistemas operativos. Las clases de ruta se dividen entre rutas puras, que proporcionan operaciones puramente computacionales sin Entrada/Salida (I/O por sus siglas en inglés), y rutas concretas, que heredan de rutas puras pero también proporcionan operaciones de I/O.
 
-La clase Path de esta biblioteca es ampliamente usada en este trabajo.
+La clase \textit{Path} de esta biblioteca es ampliamente usada en este trabajo.
+
+\subsubsection{json}
+Python tiene el módulo \textit{json} incorporado, que nos permite trabajar con datos JSON (Notación de objetos JavaScript).
+JSON es un formato de archivo estándar abierto y un formato de intercambio de datos que utiliza texto legible por humanos para almacenar y transmitir objetos de datos que consisten en matrices y pares de atributos y valores. Es un formato de datos común con diversos usos en el intercambio electrónico de datos, incluido el de las aplicaciones web con servidores.
+
+\subsubsection{mediapipe}
+Desarrollada por Google \brackcite{mediapipe_2020}, Mediapipe es una biblioteca de código abierto la cual utiliza distintos tipos de modelos para solucionar de forma conjunta varios problemas de detección [véase Fig \ref{fig:mediapipe}]. De los modelos presentes en la biblioteca de Mediapipe solo fue utilizado el modelo Holistic, el cual engloba a los modelos para la detección de manos (modelo Hands), detección facial (modelo Face Mesh) y pose corporal (modelo Pose) realizando la sincronización de estos de manera eficiente garantizando un buen resultado final.
+
+Para este trabajo solo fue necesario el uso de los modelos Hands y Pose de Holistic.
+
+\subsection{Google Colaboratory}
+
+Google provee un servicio gratuito en el navegador el cual brinda, de manera temporal, recursos computacionales (CPU,TPU,GPU,RAM,HDD) mientras se haga uso activo de los mismos. En dicha plataforma se le permite al usuario escribir y ejecutar código Python en un entorno basado en Jupyter Notebook.Siendo así una herramienta ideal para el aprendizaje de máquinas, el análisis de datos y la educación al posibilitar que personas de pocos recursos puedan acceder de forma fácil a herramientas para el aprendizaje de máquina las cuales muchas de ellas ya vienen incluidas en el entorno o son muy  sencillas de instalar en el mismo.
+Cabe destacar que además del plan gratuito que incluye CPU de última generación, 13 Gb de RAM y 110 Gb de almacenamiento, nos da la posibilidad de utilizar Google Drive para ampliar el almacenamiento y  varios planes de pago para aumentar la capacidad computacional del entorno.
+
 
 \section{Implementación de un prototipo}
-El prototipo implementado realiza todos los pasos mencionados en la sección \ref{section:proposal:stepbystep}
+Para el desarrollo de los métodos que solucionan las problemáticas resueltas en el capitulo anterior, y concreticen la propuesta ofrecida, se decide utilizar varias clases para un mayor nivel de abstracción y posibilidad de generalización de lo métodos propuestos.
 
-Primeramente se realizó todo el trabajo en Google Colaboratory (Colab para abreviar).
+\subsection{Descargar datos y filtrado}
+Auxiliándose de la biblioteca \textit{boto3} y \textit{json} fue posible recorrer los elementos disponibles en el almacenamiento de Gutiérrez-González\brackcite{leynier-lsc-2021} para, una vez descargados, filtrar los frames que son enteramente ceros y corregir alguna de las palabras mal escritas que se denotan como inexistentes. Luego se guarda todo el corpus en un archivo \textit{dataset.json} el cual al cargarlo nuevamente es utilizable como diccionario de forma instantánea. Todo este trabajo primario se realiza desde Google Colaboratory para poder conformar mejor el conjunto de datos.
 
-\subsection{Extracción de los Datos}
-Para la extracción de los datos se utilizó la biblioteca boto3 con acceso al almacenamiento en la nube donde se encontraban los datos.
-Para ello se importa el método client de boto3, el cual es instanciado en la url donde se encuentra el conjunto de datos, además de las claves de acceso, las cuales por privacidad del dueño de las mismas se sustituyen por valores de "X". 
+\subsubsection{Extracción de los Datos}
+Para la extracción de los datos se utilizó la biblioteca \textit{boto3} con acceso al almacenamiento en la nube donde se encontraban los datos.
+Para ello se importa el método \textit{client} de \textit{boto3}, el cual es instanciado en la url donde se encuentra el conjunto de datos, además de las claves de acceso, las cuales por privacidad del dueño de las mismas se sustituyen por valores de ``X'' [véase Código \ref{code:s3client}]. 
 
 \vspace{0.5cm}
 
-\begin{lstlisting}[language=Python, caption={Instanciar cliente s3}, label={code:s3client}]
+\begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Instanciar cliente s3}, label={code:s3client}]
 from boto3 import client
-
 s3_client = client(
     "s3",
     config=Config(
@@ -105,19 +81,16 @@ s3_client = client(
 )
 \end{lstlisting}
 
-Una vez obtenido el cliente configurado se descargan los datos del mismo, conociendóse que se encuentran en el bucket "lsc-corpus", los de las señas aisladas, puesto que son los únicos datos con seguridad de la seña que corresponde a cada frase.
+Una vez obtenido el cliente configurado se descargan los datos del mismo, conociéndose que se encuentran en el bucket ``lsc-corpus'', los de las señas aisladas, puesto que son los únicos datos con seguridad de la seña que corresponde a cada frase.
 
 \vspace{0.5cm}
 
-\begin{lstlisting}[language=Python, caption={Descargar usando el cliente s3}, label={code:download_s3client}]
+\begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Descargar usando el cliente s3}, label={code:download_s3client}]
 from pathlib import Path
-
 root=Path("/content")
 bucket="lsc-corpus"    
-
 paginator = s3_client.get_paginator('list_objects_v2')
 pages = paginator.paginate(Bucket=bucket)
-
 for page in pages:
     for obj in page['Contents']:
         extension = obj['Key'].split('.')[-1]
@@ -127,31 +100,33 @@ for page in pages:
   		  (drivepath/'..').resolve().mkdir(parents=True,exist_ok=True)
   		  drivepath.touch()
   		  s3_client.download_file(bucket,obj['Key'],str(drivepath))
-  
 \end{lstlisting}
-Aquí se realiza un paginado para poder recorrer de manera adecuada  los elementos del bucket para luego chequear la extensión de los archivos contenidos en cada página.
-Se conocen previamente que los datos anotados de los puntos de interés estaban recogidos en archivos con extensión json por cada frase. En la primera parte del código se importa la clase Path de pathlib para trabajar de manera rápida y efectiva con los directorios que se van creando.
 
-\subsection{Limpieza de los datos}
-Una vez ya se posean los archivos json referentes a cada frase del corpus se pueden entonces cargarlos para limpiarlos y organizarlos en un dataset mejor estructurado donde estén todas las frases juntas.
+Aquí se realiza un paginado para poder recorrer de manera adecuada  los elementos del bucket para luego chequear la extensión de los archivos contenidos en cada página [véase Código \ref{code:download_s3client}].
+Se conocen previamente que los datos anotados de los puntos de interés estaban recogidos en archivos con extensión \textit{json} por cada frase. En la primera parte del código se importa la clase \textit{Path} de \textit{pathlib} para trabajar de manera rápida y efectiva con los directorios que se van creando.
 
-En este código utilizamos expresiones regulares para la limpieza de las llaves, ya que incurrían en faltas de ortografía, errores tipográficos y de copiado.
-La primera expresión elimina todo lo que esté entre paréntesis en las llaves, puesto que esto no aporta nada a la información semántica de los mismos. Luego se reemplaza todas las ''nn'' por una ''ñ'' 
-y se eliminan los dígitos que hayan quedado de manera residual del primer método.Para a modo de cierre de la limpieza de las llaves eliminar todos los guiones entre palabras para que esten de manera individual.
+\subsubsection{Limpieza de los datos}
+Una vez ya se posean los archivos \textit{json} referentes a cada frase del corpus se pueden entonces cargarlos para limpiarlos y organizarlos en un dataset mejor estructurado donde estén todas las frases juntas.
+
+En este código [véase Código \ref{code:load_and_clean}] se utilizan expresiones regulares para la limpieza de las llaves, ya que incurrían en faltas de ortografía, errores tipográficos y de copiado. Al no poseer una forma clara de rectificar las tildes faltantes se decidió dejar así dichas palabras y recomendar el uso de un algoritmo de similitud antes de indexar en el dataset creado.
+La primera expresión elimina todo lo que esté entre paréntesis en las llaves, puesto que esto no aporta nada a la información semántica de los mismos. Luego se reemplaza todas las ``nn'' por una ``ñ'' 
+, se eliminan los dígitos que hayan quedado de manera residual del primer método y todos los guiones entre palabras para que estén de manera individual.
 \vspace{0.5cm}
 
-\begin{lstlisting}[language=Python, caption={Cargar los json y limpiar las llaves}, label={code:load_and_clean}]
-
+\begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Cargar los json y limpiar las llaves}, label={code:load_and_clean}]
 import numpy as np
 import json
 import re
-
 root_tesis = (root/f"tesis-generacion-lsc/").resolve()
 cendsor_path = "cendsor-corpus/keypoints/"
-fps=24
-
+wrong_words={ 'barsura':'basura',
+              'insipido': 'insípido',
+              'investar':'inventar',
+              'ostion':'ostion',
+              'panciencia':'paciencia',
+              'sacapunta':'sacapuntas',
+              'zapia':'zapya'}
 word_poses_dict={}
-
 for dirpath,dirnames,filenames in os.walk(root_tesis/cendsor_path):
   for filename in filenames:
     key,extension=filename.split('.')
@@ -164,6 +139,8 @@ for dirpath,dirnames,filenames in os.walk(root_tesis/cendsor_path):
     key= key.replace("nn",'ñ')
     key=re.sub(r"\s?\d","",key)
     key = key.replace("-"," ") 
+    if key in wrong_words.keys():
+      key=wrong_words[key]
     
 	###########################
 	
@@ -172,440 +149,754 @@ for dirpath,dirnames,filenames in os.walk(root_tesis/cendsor_path):
       json_list.close()
 		
 	  #######################################################
-	  # Limpieza y reajuste de los frames de los gestos
+	  # Limpieza de los frames de los gestos que son 0
 	  #######################################################
       filtro = [m!=0.0 for m in  np.mean(poseframes, axis=1)]
       
       poseframes=poseframes[filtro]
 
-      total_frames = poseframes.shape[0]
-
-      n = math.floor(total_frames/fps)
-
-      poseframes= poseframes[::n,:]
-
-      while poseframes.shape[0]>24:
-        if poseframes.shape[0]%2:
-          poseframes=poseframes[1:,:]
-        else:
-           poseframes=poseframes[:-1,:]
 	  #########################################################
 	  
       single_gesture = poseframes.tolist()
       try:
         word_poses_dict[key].append(single_gesture)
       except:
-        word_poses_dict[key]=[single_gesture]
-        
+        word_poses_dict[key]=[single_gesture]      
 \end{lstlisting}
-En el caso de los gestos existen en el corpus frames en los cuales los modelos no detectaban nada y por tanto estos devolvían (0,0,0) para todos los puntos de interés de ese frame. Por tanto se hace uso de la biblioteca json para cargar el archivo y de la biblioteca numpy para realizar la limpieza de una manera más cómoda y rápida.
+En el caso de los gestos, existen en el corpus frames en los cuales los modelos no detectaban nada y por tanto estos devolvían (0,0,0) para todos los puntos de interés de ese frame. Por tanto, se hace uso de la biblioteca \textit{json} para cargar el archivo y de la biblioteca numpy para realizar la limpieza de una manera más cómoda y rápida.
 Luego de obtener la máscara (filtro) con la información de los frames vacíos, simplemente se indexa en el arreglo numpy guardando su resultado como si fuera ahora el arreglo original.
-Pero proseguía un problema más, el tamaño de los frames no era parejo. Algunos archivos tenían más frames que otros, por lo tanto se decidió llevarlos todos a 24 frames utilizando la función floor de la biblioteca math para obtener un valor que al dividir por la cantidad de frames no diera superior y fuera entero.
-Posteriormente, como no van a quedar exactamente de tamaño 24, sino mayor, se va reduciendo en 1 la cantidad de frames por los extremos hasta llegar a la cantidad deseada.
 
-Como información adicional se guarda el diccionario tanto en la nube como en local para su mejor aprovechamiento y eliminarnos pasos extras a la hora de probar el modelo.
+Como información adicional, se guarda el diccionario tanto en la nube como en el directorio local para su mejor aprovechamiento y eliminarnos pasos extras a la hora de probar el modelo.
 
-%\subsection{Cargando el embedding de palabra}
-%Primeramente se debe descargar el archivo de los KeyedVectors el cual pesa alrededor de los 3Gb, razón por la cual se ha estado desarrollando todo este flujo de trabajo directamente en Colab puesto que es un gran modelo para capturar significado semántico dado lo limitado del corpus en ese sentido.
-%\vspace{0.5cm}
-%
-%\begin{lstlisting}[language=Bash, caption={Descargar datos del modelo KeyedVectors de su sitio web}] 
-%  
-%  $ wget "https://zenodo.org/record/1410403/files/keyed_vectors.zip" 
-%  $ unzip keyed_vectors.zip
-%  
-%\end{lstlisting}
-%
-%Luego de descargado y descomprimido se puede entonces cargar el modelo.
-%
-%\begin{lstlisting}[language=Python, caption={Cargar modelo de KeyedVectors}]
-%  from gensim.models import KeyedVectors
-%  wv = KeyedVectors.load('complete.kv', mmap='r')
-%\end{lstlisting}
-%Como se aprecia, KeyedVectors es un modelo perteneciente a la biblioteca gensim, el cual es uno de los elementos que componen a Word2Vec y justamente el único que necesitamos para nuestro propósito de  capturar la semántica de las frases. Cargar completamente el modelo Word2Vec exige mucha memoria RAM puesto que es un modelo de más de 7 Gb en su completitud y es esa la razón por la que se escoge solamente el diccionario de los vectores claves (KeyedVectors).
-%
-%.El archivo complete.kv es el resultado de descomprimir el modelo descargado.
-\subsection{Encontrando similitud de palabras}
-Como se plantea en la propuesta primeramente se debe asegurar de que se logre encontrar una palabra dentro del vocabulario de nuestro embedding, por eso se declara el siguiente método a continuación.
 
-\begin{lstlisting}[language=Python, caption={Método para encontrar palabras similares en un vocabulario}]
-  def find_similar(word, vocab):
-  	import difflib
-  	best_match=difflib.get_close_matches(word,vocab)
-  	if len(best_match) != 0:
-    	score = difflib.SequenceMatcher(None,word,best_match[0]).ratio()
-    	return best_match[0],score
-    else:
-    	return None
-    	
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% MOSTRAR EVIDENCIA DE LA SOLUCION
+% PUEDE SER EN EXPERIMENTOS TAMBIEN
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Creación de las Clases}
+En esta subsección se trataran de forma más especifica las clases utilizadas en la implementación de la propuesta.
+
+\subsubsection{Clase TokenLSC}
+
+Una seña esta asociada a la clase \textit{TokenLSC}, la cual está conformada  por un nombre y una lista de Skeleton, los cuales no son más que una clase para abstraer conceptualmente un frame. La clase Skeleton cuenta con 3 Bodyparts para su inicialización, las cuales deben ser pasadas como argumentos a su constructor. Estas son la conceptualización de los puntos referentes a un tipo de parte del cuerpo, los cuales son representados mediante un enumerador (\textit{enum}) inicialmente.
+La clase \textit{TokenLSC} cuenta con una serie de atributos y métodos para solventar de manera correcta los problemas planteados en el capitulo anterior, siendo estos métodos descritos a continuación, así como los correspondientes utilizados de Skeleton y Bodypart para ayudar a su cumplimiento.
+
+La clase \textit{TokenLSC} esta conformada por un nombre (el cual hace referencia al identificador de la seña),  una lista de objetos de tipo Skeleton, los cuales a su vez están conformados  por 3 partes de cuerpo (son la clase Bodypart creada para este propósito). Además, al construirse la clase \textit{TokenLSC}, también se configuran valores necesarios para el graficado y animación utilizando la biblioteca de Matplotlib.
+
+\subsubsection{Clase Skeleton}
+La clase Skeleton [véase Código \ref{code:skeleton}] es una abstracción para mejorar el manejo de las partes del cuerpo. Corresponden a un frame de la seña en formato de video y contiene propiedades y métodos de utilidad para la solucionar los problemas antes vistos en el pasado capítulo. 
+
+\begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Clase de Skeleton}, label={code:skeleton}]
+class Skeleton:
+    default_lhand = DefaultLeftHand()
+    default_rhand = DefaultRightHand()
+    def __init__(self, body: Bodypart, lhand: Bodypart, rhand: Bodypart):
+    ...
+    @property
+    def bodyparts(self):
+    ...
+    @property
+    def all_points(self):
+    ...
+    def get_position_default_hand(self, is_left: bool, hand_forearm_proportion=1/11.15, finger_proportion=1/0.68):
+    ...
+    def plot(self, figsize=(5.0, 5.0), elev=90, angle=1, dims=None, text=False, joints=True):
+    ...
+    def _transform_data(self, Data, i=0):
+    ...
+    def normalize(self):
+    ...
 \end{lstlisting}
-En este método se utiliza el método get$\_{}$close$\_{}$matches para encontrar la palabra más parecida sintácticamente a la proporcionada, en el vocabulario dado.
-Luego si encuentra que existe alguna palabra que sea similar, pues se instancia una clase SequenceMatcher para hallar que tan similares son. Por supuesto este ultimo paso solo es necesario en caso de necesitarse cuantificar la similitud.
+Cada esqueleto posee un método para graficarse en caso de requerirse y además posee los métodos necesarios para ajustar las manos por defecto que poseen en caso de que sus manos originales no existan.
 
-%\subsection{Extrayendo la matriz de cada frase}
-%El siguiente método genera una matriz de $num\_{}vecs$ x $vec\_{}dim$ que es la dimensión de los vectores. 
-%Primero se crea un diccionario de palabras mal escritas (posible en este escenario dado que solo se cuentan con poco más de 1050 vocablos) y además para no arrastrar el error semántico de unos datos erróneos se escogen palabras de igual significado semántico.
-%
-%Luego se crea un arreglo numpy de ceros con las dimensiones específicadas para posteriormente conformarlo con los vectores de cada palabra de la frase de 5 vocablos en el caso del corpus utilizado.
-%
-%\begin{lstlisting}[language=Python, caption={Obtener el vector dada una palabra}]
-%  def get_vector(key,word_vectors,num_vecs=5):
-%  wrong_words={'antonimo': 'antónimo',
-%              'audiologia':'audiología',
-%              'barsura':'basura',
-%              'defectologia':'defectología',
-%              'empanizar':'empanar',
-%              'insipido': 'insípido',
-%              'investar':'inventar',
-%              'lexicologia': 'lexicología',
-%              'ostion':'ostra',
-%              'panciencia':'paciencia',
-%              'policlinica': 'policlínica',
-%              'querologia':'querología',
-%              'rehablilitacion':'rehabilitación',
-%              'sacapunta':'sacapuntas',
-%              'señacionario':'diccionario',
-%              'señario':'libro', 
-%              'zapia':'compartición'}
-%  vector=np.zeros((num_vecs,word_vectors.vector_size))
-%  
-%  for i,word in enumerate(key.split(" ")):
-%    if word in word_vectors.vocab.keys():
-%
-%      wordvec = word_vectors[word]
-%    else:
-%      word=wrong_words[word]
-%      nword, similarity = find_similar(word,word_vectors.vocab.keys())
-%      print(key,"Not Founded")
-%      print(nword,similarity)
-%
-%      wordvec = word_vectors[nword]
-%    vector[i:]=wordvec
-%  return vector
-%\end{lstlisting}
-%Luego de creado el arreglo de numpy, se verifica que la palabra esté en el vocabulario del embedding antes de indexar la palabra en busca de su vector. En caso de no existir la palabra pues se utiliza el método descrito en la subsección anterior para hallar un vocablo sintácticamente similar que si pertenezca al vocabulario del embedding.
-%
-%Finalmente, después de rellenado el arreglo de numpy, este es retornado.
+\subsubsection{Clase Bodypart}
 
-%\subsection{Creando los conjuntos}
-%
-%En este código creamos y llenamos los conjuntos $X$ e $y$ para su ulterior uso en el modelo. $num\_{}vecs$ es escogido como el mayor número de palabras de todo el conjunto de datos, el cual en exploraciones a los datos fue revelado que es 5.
-%
-%\begin{lstlisting}[language=Python, caption={Crear los conjuntos X e y}]
-%  
-%X=[]
-%y=[]
-%
-%num_vecs=max([len(key.split(" ")) for key in dataset.keys()])
-%
-%for key,gestures in dataset.items():
-%  vector=get_vector(key,word_vectors,num_vecs)
-%  X.append(vector)
-%  y.append(np.array(gestures[0]).reshape((fps,sum([dim[0] for dim in dims]),dims[0][1]))) 
-%\end{lstlisting}
-%Para evitar el problema de que a cada frase le correspondieran varias señas, con alta probabilidad de que fueran distintas, se optó por solamente escoger la primera de las señas como representativa de las demás.
+Los objetos de tipo Bodypart [véase Código \ref{code:bodypart}] son una conceptualización de las partes del cuerpo utilizadas en las estructuras internas de las clases Skeleton y \textit{TokenLSC}. Se define un enumerador para clasificar de forma más cómoda y legible los tipos de partes del cuerpo presentadas.
 
-\subsection{Métodos para la animación}
-Primero instanciamos los valores necesarios para animar correctamente un conjunto de puntos con estructura igual a la de los datos .
 
-\begin{lstlisting}[language=Python, caption={Instanciar datos necesarios para animar }]
-body_dim = 25*3
-left_dim = 21*3
-right_dim = 21*3
-
-dims=[(25,3),(21,3),(21,3)]
-
-bodyjoints=[[1,7],[4,8],[9,10],[11,12],[11,13],
-[12,14],[11,23],[12,24],[23,24],[13,15],[14,16]]
-leftjoints=[[0,1],[1,2],[2,3],[3,4],
-            [0,5],[5,6],[6,7],[7,8],
-            [5,9],[9,10],[10,11],[11,12],
-            [9,13],[13,14],[14,15],[15,16],
-            [13,17],[17,18],[18,19],[19,20],[0,17]]
-rightjoints=leftjoints
-
-fullbodyjoints=[bodyjoints,leftjoints,rightjoints]
-
-parts_names=["body","left","right"]
+\begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Clase de Bodypart}, label={code:bodypart}]
+from enum import Enum
+class TypeOfBodyPart(Enum):
+    BODY = 0
+    LHAND = 1
+    RHAND = 2
+class Bodypart:
+    def __init__(self, name: str, type: TypeOfBodyPart, points: ndarray):
+    ...
+    def normalize(self):
+    ...
+    def plot(self):
+    ...
 \end{lstlisting}
 
-Utilizamos el siguiente método en caso de que los puntos no vengan en formato (24,67,3) y simplemente vengan en formato (24,201)
-
-\begin{lstlisting}[language=Python, caption={Extraer las partes en 3d }]
-def extract_3d_shape(array,dims):
-      init=0
-      ending=0
-      parts=[]
-      for dim in dims:
-        ending+=dim[0]*dim[1]
-        parts.append(array[:,init:ending].reshape((array.shape[0],dim[0],dim[1])))
-        init+=dim[0]*dim[1]
-
-      single_gesture={parts_names[i]:parts[i] for i in range(len(dims))}
-
-      return single_gesture
+\begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Clase de las manos por defecto que heredan de la clase Bodypart}, label={code:bodypart:default}]
+class DefaultRightHand(Bodypart):
+    def __init__(self):
+    		np_default_hand= np.array([
+            [4.32893813e-01,  7.13910162e-01,  1.74915698e-07],
+            ...
+            [5.24085701e-01,  7.43879616e-01, -1.89451054e-02],])
+        super().__init__("Default Right Hand", TypeOfBodyPart.RHAND, )
+class DefaultLeftHand(Bodypart):
+    def __init__(self):
+        rhand = DefaultRightHand().points
+        mirror_x_matrix = np.array([
+            [-1, 0, 0],
+            [0, 1, 0],
+            [0, 0, 1],
+        ])
+        lhand = rhand @ mirror_x_matrix
+        super().__init__("Default Left Hand", TypeOfBodyPart.LHAND, lhand)
 \end{lstlisting}
 
-Utilizamos la lista con las dimensiones para de poder, en caso de ser necesario, incluir graficaciones de otras partes del cuerpo que fueron excluidas.
+Además, se definen las clases para las manos derecha e izquierda por defecto las cuales heredan de la clase Bodypart [véase Código \ref{code:bodypart:default}].
 
-El siguiente método contituye la base de todos los métodos para las animaciones de este trabajo.
-Se utilizan varias clases y métodos de la biblioteca matplotlib para realizar la animación.
+\subsubsection{Clases para BVH}
+ Se utilizaron clases y métodos para intentar la correcta exportación del token a formato BVH [véase Código \ref{code:bvhNodeAndHeader}] para poder ser utilizado posteriormente en animaciones y renderizados. 
+\begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Clase referente a la jerarquía de BVH}, label={code:bvhNodeAndHeader}]
+class BvhNode(object):
+    def __init__(
+        self, name, offset, rotation_order,
+        children=None, parent=None, is_root=False, is_end_site=False
+    ):
+        if not is_end_site and \
+                rotation_order not in ['xyz', 'xzy', 'yxz', 'yzx', 'zxy', 'zyx']:
+            raise ValueError(f'Rotation order invalid.')
+        self.name = name
+        self.offset = offset
+        self.rotation_order = rotation_order
+        self.children = children
+        self.parent = parent
+        self.is_root = is_root
+        self.is_end_site = is_end_site
+class BvhHeader(object):
+    def __init__(self, root, nodes):
+        self.root = root
+        self.nodes = nodes
+\end{lstlisting}
 
-FuncAnimation recibe la figura en la que trabajar,la función de actualización, que es la encargada de la transición entre frames, y por último la cantidad de frames a animar.
+Se investigó la vía descrita por Nguyen y col. \brackcite{Nguyen2021AutomaticGO} sin éxito alguno puesto que no se pudieron instalar las dependencias y bibliotecas necesarias.
+ 
 
-\begin{lstlisting}[language=Python, caption={Método base para animar }]
-import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
-from matplotlib import rc
-import matplotlib.cm as cm
+\subsection{Métodos desarrollados}
 
-def transform_data(Data,i):
-    from scipy.spatial.transform import Rotation as R
+\subsubsection{Métodos para la normalización}
+Este conjunto de métodos son los necesarios para resolver las problemáticas asociadas con las manos faltantes y desplazadas, además de las diferencias estructurales de los señantes mediante el uso de escalado proporcional dado una medida fija de los hombros. Dichos métodos pueden encontrarse agrupados en el método \textit{normalize}, de la clase implementada [véase Código \ref{code:tokenlsc:normalize}]. 
 
-    r = R.from_rotvec(np.pi/2 * np.array([0,0,1]))
-
-    X=np.array(Data[i,:,0])
-    Y=np.array(-Data[i,:,1])
-    Z=np.array(Data[i,:,2])
-    meanpoint=(X[X!=0].mean(),Y[Y!=0].mean(),Z[Z!=0].mean())
-
-    D = np.array([x if x!=(0.0,0.0,0.0) 
-                    else meanpoint
-              for x in zip(X, Y, Z) ])
-    D = r.apply(D)
-    return D
-
-def animate(
-			Data,
-			frames=None,
-			figsize=(7.0,3.5),
-			elev=None,
-			angle=None,
-			dims=dims,
-			text=False,
-			joints=False):
-			
-  rc('animation',html='jshtml')
-  fig_size_x,fig_size_y=figsize
-
-  plt.rcParams["figure.figsize"]= [fig_size_x,fig_size_y]
-  plt.rcParams['figure.autolayout']= True
-
-  fig = plt.figure()
-  ax = fig.add_subplot(projection='3d')
-  colors=['b','y','r','k']
-  
-  def update(i):
-    ax.clear()
-
-	D = transform_data(Data,i)	
-	
-    s=0
-    e=0
-    for j, dim in enumerate(dims):
-      dim = dim[0]
-      e+=dim
-
-      x=D[s:e,0]
-      y=D[s:e,1]
-      z=D[s:e,2]
-
-      # print((x.mean(),y.mean(),z.mean()) != meanpoint )
-      if (x.mean(),y.mean(),z.mean()) != meanpoint:
-        # print(x.mean(),y.mean(),z.mean())
-        ax.plot(D[s:e,0],D[s:e,1],D[s:e,2],f'{colors[j]}.')
-      if text:
-        for p in range(s,e):
-          ax.text3D(D[p,0],D[p,1],D[p,2],str(p))
-      if joints:
-        for h,k in fullbodyjoints[j]:
-          ax.plot([D[s+h,0],D[s+k,0]],[D[s+h,1],D[s+k,1]],[D[s+h,2],D[s+k,2]],f'{colors[j]}')
-      s+=dim
-
-    ax.set_axis_off()
-    if elev and angle:
-      ax.view_init(elev,angle) 
-
+% <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+\begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Método normalize de la clase TokenLSC}, label={code:tokenlsc:normalize}]
+class TokenLSC:
+    def __init__(self, name: str, sign: List[Skeleton], with_normalize=True, with_crop=True) -> None:
+    		...   
     
-    return ax
-
-  if frames is None:
-    frames=24
-  return FuncAnimation(fig,update,frames=frames,repeat=True)
+    def normalize(self, rhand_threshold=2, lhand_threshold=2, previous_cut=2,
+     next_cut=2, edge_interpolation_gap=5, hand_forearm_proportion=3/11, finger_proportion=1/0.68):
+     	if self.isNormalized:
+            pass
+        self.isNormalize = True
+        for i, sk in enumerate(self.sign):
+            body, lhand, rhand = sk.bodyparts
+            body.normalize()
+            lhand.normalize()
+            rhand.normalize()
+            sk.normalize()
+        rhand_mask = [np.linalg.norm(
+            x.rhand.points) > rhand_threshold for x in self.sign]
+        lhand_mask = [np.linalg.norm(
+            x.lhand.points) > lhand_threshold for x in self.sign]
+        def get_to_fix_intervals(mask):
+         	...
+        def fix_interval(intervals: list, body_part, mask: list):
+			...
+        rhand_intervals = get_to_fix_intervals(rhand_mask)
+        lhand_intervals = get_to_fix_intervals(lhand_mask)
+        fix_interval(rhand_intervals, TypeOfBodyPart.RHAND, rhand_mask)
+        fix_interval(lhand_intervals, TypeOfBodyPart.LHAND, lhand_mask)
+        angle = None
+        for sk in self.sign:
+            angle = self._scale_normalize(sk, angle=angle)     
+	...
 \end{lstlisting}
 
-Se utiliza la clase Rotation del módulo transform de scipy para rotar de manera efectiva la figura para que sea visualmente atractiva la animación desde una vista frontal. Al igual que si existen muchos puntos espaciales en el (0,0,0) se halla la media de los puntos distintos del cero del espacio para no distorsionar el graficado de la animación, esto ocurre por fallos del método que creó el corpus inicialemente al no detectar alguna región del cuerpo, es decir ya los datos con los que se cuentan vienen dados con cierto grado de error.
-Luego, para que sea visualmente llamativo, se utilizan las dimensiones de las distintas partes del cuerpo para graficar de un color diferente cada una de las partes y se utilizan las uniones declaradas inicialmente. 
+Una vez normalizado un token no se vuelve a normalizar, a menos, que el usuario decida ejecutarlo por su cuenta. Cada vez que un token es creado, es normalizado por defecto, dejando a elección de quien lo use activar o no los argumentos pertinentes durante la construcción.
 
-En caso de ser necesario puede agregarse el texto del número correspondiente al punto para mejor visualización.
-
-También se incorpora la posibilidad de modificar las dimensiones de la figura, así como el angl¡ulo de azimut y de elevación correspondiente.
-
-
-En cuanto al último método, este solo representa una composición de los métodos anteriores con una organización intermedia de los arreglos correspondientes a cada parte en caso de que la entrada no tenga la estructura idónea para la graficación.
-
-\begin{lstlisting}[language=Python, caption={Graficar la animación }]
-  
-def plotanimation(result):
-	if result.shape[2]==201:
-  		dict_parts=extract_3d_shape(result[0],dims)
-      
-  		body_frames = dict_parts["body"]
-  		left_frames = dict_parts["left"]
-  		right_frames = dict_parts["right"]
-
-  		result = np.hstack((body_frames,left_frames,right_frames))
-  		
-
-  a=animate(result,result.shape[0],(12,10),90,1,dims,text=False,joints=True)
-  
-  return a
+\subsubsection{Método para el recorte de movimiento}
+El método para el recorte de movimiento [véase Código \ref{code:tokenlsc:cropMovement}] por inactividad utiliza la integración numérica para  encontrar la cantidad de movimiento para un intervalo dado. Es posible recortar para mantener un determinado porcentaje del movimiento total original de la seña a través del argumento movement$\_{}$percentage (por defecto es un 80 \% del movimiento total el que se mantiene). Además, puede escogerse que a qué tipo de parte del cuerpo se le quiere hacer énfasis, lográndose así un recorte más efectivo a las necesidades del usuario. Los argumentos \textit{difference$\_{}$mapping} y  \textit{to$\_{}$maximize} son las funciones \textit{lambda} encargadas de determinar como se cuantifica el movimiento y en base a que criterio se maximiza. Cómo último argumento se deja a elección del usuario escoger entre la integración por el método de Simpson o por el método de Trapezoides.
+\begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Método crop$\_{}$movement de la clase TokenLSC}, label={code:tokenlsc:cropMovement}]
+def crop_movement(self,
+                      movement_percentage=.8,
+                      focus_on: TypeOfBodyPart = None,
+                      difference_mapping=lambda x: np.linalg.norm(x) ** 2,
+                      to_maximize=lambda value, i, j: value / abs(j-i),
+                      integration_method="simpson"):
+        """
+        integration_method: trapezoid or simpson
+        """
+        if self.isCropped:
+            pass
+        self.isCropped = True
+        if focus_on is None:
+            general = [sk.all_points for sk in self.sign]
+            general = [general[i] - general[i+1]
+                       for i in range(len(general) - 1)]
+            to_focus = general
+        elif focus_on == TypeOfBodyPart.BODY:
+            rhands = [sk.rhand for sk in self.sign]
+            rhands = [rhands[i].points -
+                      rhands[i+1].points for i in range(len(rhands) - 1)]
+            to_focus = rhands
+        elif focus_on == TypeOfBodyPart.LHAND:
+            lhands = [sk.lhand for sk in self.sign]
+            lhands = [lhands[i].points -
+                      lhands[i+1].points for i in range(len(lhands) - 1)]
+            to_focus = lhands
+        elif focus_on == TypeOfBodyPart.RHAND:
+            body = [sk.body for sk in self.sign]
+            body = [body[i].points -
+                    body[i+1].points for i in range(len(body) - 1)]
+            to_focus = body
+        else:
+            raise ValueError("Invalid focus_on:", focus_on)
+        def integrate(samples, a, b):
+            ...
+        # Integrate the squared norm
+        integrate_with = [difference_mapping(x) for x in to_focus]
+        integration_values = {}
+        maximization_values = {}
+        total_movement = 0
+        for i in range(len(integrate_with)-1):
+            for j in range(i+1, len(integrate_with)):
+                value = integrate(integrate_with, i, j)
+                if j == i + 1:
+                    total_movement += value
+                integration_values[i, j] = value
+                maximization_values[i, j] = to_maximize(value, i, j)        
+        i_max = 0
+        j_max = 0
+        value_max = 0
+        # Can add some restrictions if necessary
+        for i in range(len(integrate_with)-1):
+            for j in range(i+1, len(integrate_with)):
+                int_val = integration_values[i, j]
+                max_val = maximization_values[i, j]
+                current_movement_percentage = int_val / total_movement
+                if max_val > value_max and current_movement_percentage >= movement_percentage:
+                    value_max = max_val
+                    i_max = i
+                    j_max = j
+        self.sign = self.sign[i_max:j_max+1]
+        return i_max, j_max
 \end{lstlisting}
 
-%\section{Entrenamiento}
-%El modelo presentado, como se mencionó en capítulos anteriores, necesita ser debidamente entrenado. Dado que el dominio e imagen del conjunto disponible para el entrenamiento es alarmantemente corto en comparación con los vocablos utilizados comúnmente en el día a día por una persona promedio. Hablamos de que alrededor de 20 mil vocablos son empleados a diario en una jornada normal, mientras que el corpus brindado por el CENDSOR solo cuenta con poco más de 1050 vocablos(con algunos teniendo más de 1 respresentación visual diferente)
-%
-%Con estas condiciones del corpus, el enfoque adoptado para el entrenamiento es el de generar sobreadecuación (overfitting) sobre los únicos vocablos conocidos para que así al componerse con el uso del embedding de palabra puedan encontrarse similaridades semánticas entre una palabra desconocida y una del vocabulario disponible.
-%subsection{Definición del modelo}
-%
-%Como se explicó en la propuesta, el enfoque adoptado para este modelo es el de utilizar redes neuronales recurrentes, más específicamente LSTM multicapas con capas deconvolucionales para ampliar las dimensiones.
-%\begin{lstlisting}[language=Python, caption={Diseño del modelo}]
-%
-%from tensorflow.keras.layers import InputLayer, LSTM , Conv1DTranspose, Reshape
-%from tensorflow.keras.models import Sequential
-%from tensorflow_addons.metrics.r_square import RSquare
-%
-%def get_model(X, y):
-%    model = Sequential()
-%    model.add(InputLayer(X.shape[1:]))
-%    model.add(LSTM(128, return_sequences=True, activation="relu"))
-%    model.add(LSTM(256, return_sequences=True, activation="relu"))
-%    model.add(Conv1DTranspose(filters=100,kernel_size=10))
-%    model.add(LSTM(128, return_sequences=True, activation="relu"))
-%    model.add(Conv1DTranspose(filters=150,kernel_size=11))
-%    model.add(LSTM(201,return_sequences=True))
-%    model.add(Reshape(y.shape[1:]))
-%    loss = "mae"
-%    metrics = RSquare()
-%    model.compile(optimizer='Adam', loss=loss, metrics=metrics)
-%    return model
-%\end{lstlisting}
-%
-%Las cantidad de unidades fueron escogidas basándonos en la unidades que reportaron beneficios para el trabajo precedente a este [\cite{leynier-lsc-2021}].
-%Para la función de pérdida fue seleccionado el Error Medio Absoluto(MAE por sus siglas en inglés) puesto que compara efectivamente la diferencia de posición espacial dados los datos con que se cuentan.
-%Además se usa el R Cuadrado como métrica de puntuación para poder entrenar de manera efectiva.
-%
-%
-%Las opciones basadas en transformadores requerían de cantidades de datos superiores a las que se contaban así que se tomó solo en cuenta los estudios referentes a las Redes neuronales recurrentes LSTM.
-%
-%
-%Se utilizó un método supervisado de entrenamiento usando un enfoque regresivo dada la no existencia de categorías calaramente definidas en el espacio de todas las posibles señas.
-%\begin{lstlisting}[language=Python, caption={Graficar la animación }]
-%
-%
-%from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
-%from sklearn.model_selection import KFold,cross_val_score
-%
-%X,y=(np.array(X),np.array(y))
-%X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.3,random_state=42)
-%
-%checkpoint_path= (droot_tesis/"generacion-lsc_0001.ckpt").resolve()
-%
-%num_folds=5
-%batch_size=32
-%epochs=1000
-%
-%kfold = KFold(n_splits=num_folds, shuffle=True)
-%
-%# K-fold Cross Validation model evaluation
-%acc_per_fold=[]
-%loss_per_fold=[]
-%fold_no = 1
-%for train, val in kfold.split(X, y):
-%
-%  model = get_model(X, y)
-%  if checkpoint_path.exists():
-%    model.load_weights(checkpoint_path)
-%
-%  ckpt_callback= ModelCheckpoint(
-%      filepath=str(checkpoint_path).format(epoch=0),
-%      save_weights_only=True,
-%      verbose=1,
-%      save_freq=5*batch_size)
-%  
-%  callback = EarlyStopping(
-%      monitor= "loss",
-%      patience=10)
-%  
-%  print(model.summary())
-%  # Generate a print
-%  print('--------------------')
-%  print(f'Training for fold {fold_no} ...')
-%
-%  # Fit data to model
-%  history = model.fit(
-%      X[train],
-%       y[train],
-%       batch_size=batch_size,
-%       epochs=epochs,
-%       callbacks=[callback,ckpt_callback])
-%
-%  # Generate generalization metrics
-%  scores = model.evaluate(X[val], y[val],)
-%  print(f'Score for fold {fold_no}: {model.metrics_names[0]} of {scores[0]}; {model.metrics_names[1]} of {scores[1]*100}%')
-%  acc_per_fold.append(scores[1] * 100)
-%  loss_per_fold.append(scores[0])
-%
-%  # Increase fold number
-%  fold_no = fold_no + 1
-%
-%\end{lstlisting}
-%
-%Se utiliza un entrenamiento con Kfold para iterar por conjuntos de datos separados de forma aleatoria y así lograr evaluar para todos los valores además de 1000 epochs.
-%Se utilizan callbacks de parada temprana para en caso de que los valores de las funciones de puntuación y de pérdida no varían mucho luego de un cierto tiempo y además se usa un callback para salvar los pesos del modelo durante el entrenamiento en caso de colapso del servicio de Colab o de fallos eléctricos. 
-%Dicha salva de los pesos del modelo es retomada en cada iteración del método Kfold para garantizar que se haga overfitting sobre los datos.
-%
-%Podrá parecer extraño que se quiera sobreadecuar el modelo al conjunto de datos pero no es la primera vez que se hace esto sobre el vocabulario disponible de cierta tarea o problema, como se hizo en el caso de GPT3, el cual sobreadecúa los datos de todo internet logrando así dominar el vocabulario dado.
+Una vez escogidos los puntos para enfocar el recorte, se computan los valores del rango de integración al igual que los valores de la función para ser maximizada. Se utiliza el método de fuerza bruta para resolver el problema de optimización presentado, puesto que se cuenta con un dominio finito de frames que son, en lo humanamente razonable, pocos para utilizar mejoras algorítmicas.
 
-\subsection{Experimentos}
-%Como desenlace del entrenamiento del modelo se logró evidenciar buenos resultados dada la simpleza del método presentado, las limitantes y problemáticas del conjunto de datos.
-%
-%\begin{figure}[ht!]
-%    \centering
-%    \includegraphics[width=0.8\textwidth]{Graphics/resumen_modelo.png}
-%    \caption{Resumen de las capas y parametros del modelo}
-%    \label{fig:resumen_modelo}
-%\end{figure}
-%
-%Durante el entrenamiento se utilizaron las métricas Error Promedio Absoluto (MAE por sus siglas en inglés) como función de pérdida y R Cuadrado (R Squared) como función de puntuación dado que este es un problema de regresión.
-%
-%
-%\begin{figure}[ht!]
-%    \centering
-%    \includegraphics[width=0.8\textwidth]{Graphics/metricas_last_epochs.png}
-%    \caption{Resultado de las métricas de los últimos epochs del modelo durante el entrenamiento}
-%    \label{fig:metricas_last_epochs}
-%\end{figure}
-%
-%Aquí se puede presenciar una comparativa de los resultados obtenidos para la primera frases del conjunto de datos.
-%
-%\begin{figure}[ht!]
-%    \centering
-%    \includegraphics[width=0.8\textwidth]{Graphics/abandonar_comparison.png}
-%    \caption{Comparativa de la frase ''abandonar'' . Fila superior los valores predichos. Fila inferior los valores reales}
-%    \label{fig:abandonar_comparison}
-%\end{figure}
-%
-%\begin{figure}[ht!]
-%    \centering
-%    \includegraphics[width=0.8\textwidth]{Graphics/por_la_mañana_comparison.png}
-%    \caption{Comparativa de la frase ''por la mañana'' . Fila superior los valores predichos. Fila inferior los valores reales}
-%    \label{fig:mannana_comparison}
-%\end{figure}
+\subsubsection{Métodos para la unión de tokens}
+ 
+ Para la concatenación de tokens [véase Código \ref{code:tokenlsc:unionmethods}], se redefine el operador suma de la clase \textit{TokenLSC}, lográndose así una mejor inter-operabilidad entre los tokens de lengua de señas. Una vez 2 tokens son adicionados, el método join$\_{}$tokens es llamado con los mejores valores por defecto, escogidos de forma perceptual por el autor. El método join$\_{}$tokens recibe los tokens a ser unidos, así como la cantidad de esqueletos a ser escogidos del primer token y del segundo, con prev$\_{}$cut y next$\_{}$cut respectivamente. La cantidad de esqueletos a ser creada también es uno de los parámetros a ser escogidos por el usuario con la variable amount$\_{}$of$\_{}$skeletons para garantizar una mayor adecuación a las diversas necesidades futuras que se puedan presentar. Como último argumento se puede escoger el método de interpolación a ser utilizado, por defecto este es lineal dado que es necesario para solventar varias de las problemáticas explicadas en el capítulo anterior.
+ 
+\begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Método utilizados para la unión de tokens TokenLSC}, label={code:tokenlsc:unionmethods}] 
+@staticmethod
+    def join_tokens(token1, token2, prev_cut=2, next_cut=2, amount_of_skeletons=None, kind='linear'):
+        sign1, sign2 = token1.sign, token2.sign
+        new_name = f"{token1.name}-{token2.name}"
+        last_sk = sign1[-1].all_points
+        first_sk = sign2[0].all_points
+        if amount_of_skeletons is None:
+            difference = np.linalg.norm(last_sk - first_sk)
+            f = interp1d([0, 0.5, 4.7, 9], [0, 8, 14, 18],
+                         assume_sorted=True, kind="linear", fill_value="extrapolate")
+            amount_of_skeletons = int(np.ceil(f(difference)))
+        elif amount_of_skeletons < 0:
+            raise ValueError("amount_of_skeleton is negative")
+        list_skeleton = TokenLSC.interpolate(sign1, sign2,
+                                           prev_cut=prev_cut,
+                                           next_cut=next_cut,
+                                           amount_of_skeletons=amount_of_skeletons,
+                                           kind=kind)
+        new_sign = sign1+list_skeleton+sign2
+        return TokenLSC(new_name, new_sign, with_normalize=False, with_crop=False)
+    def __add__(self, object):
+        '''
+        Interpolate here with two LSC tokens
+        '''
+        if not isinstance(object, TokenLSC):
+            raise ValueError(
+                f"Invalid type {type(object)} in addition with TokenLSC")
+        return self.join_tokens(self, object) 
+\end{lstlisting}
 
-\subsection{Discusión}
-%Visualmente se obtuvieron buenos resultados, pero sin una medida específica salvo la percepción del autor.
-%Muchos de los puntos referentes a los dedos no se detectaron como se correspondía y no se tuvo una métrica que describiera bien la puntuación del modelo de regresión.
-% Esto se debe en gran parte a que los datos con que se contaban presentaban errores y, al ser pocos, se transmitían de manera fácil al modelo durante el entrenamiento, a pesar de emplear la sobreadecuación del mismo al corpus brindado.
-%
-%A pesar de ello se obtuvieron resultados bastante aceptables y una puntuación del R Cuadrado bastante cercana al máximo posible que es 1.
+Se utiliza en caso de ser $None$ el argumento para la cantidad de esqueletos, este es hallado mediante la interpolación de valores perceptualmente buenos para el autor. Luego se hace un llamado al método \textit{interpolate} (de la clase \textit{TokenLSC} también) el cual describiremos a continuación [véase Código \ref{code:tokenlsc:interpolate}].
+
+\begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Método estático interpolate de la clase TokenLSC}, label={code:tokenlsc:interpolate}] 
+ @staticmethod
+    def interpolate(sign1: List[Skeleton], sign2: List[Skeleton], prev_cut=2, next_cut=2, amount_of_skeletons=4, kind='cubic'):
+        origin_skeletons = sign1[-prev_cut:]
+        end_skeletons = sign2[:next_cut]
+        l = prev_cut + amount_of_skeletons+ next_cut 
+        dims = origin_skeletons[0].all_points.shape
+        newbodies = np.zeros((amount_of_skeletons, dims[0], dims[1]))
+        fullbodies = [sk.all_points for sk in origin_skeletons+end_skeletons]
+        for i, points in enumerate(zip(*fullbodies)):
+            current_kind = kind
+            x = [point[0] for point in points]
+            y = [point[1] for point in points]
+            z = [point[2] for point in points]
+            t = [j for j in range(prev_cut)] + 
+            		[prev_cut + amount_of_skeletons + j for j in range(next_cut)]
+            if len(t) < 4:
+                current_kind = "linear"
+            fx = interp1d(t, x, kind=current_kind)
+            fy = interp1d(t, y, kind=current_kind)
+            fz = interp1d(t, z, kind=current_kind)
+            newx = [fx(p)
+                    for p in range(prev_cut, prev_cut + amount_of_skeletons)]
+            newy = [fy(p)
+                    for p in range(prev_cut, prev_cut + amount_of_skeletons)]
+            newz = [fz(p)
+                    for p in range(prev_cut, prev_cut + amount_of_skeletons)]
+            for j in range(amount_of_skeletons):
+                X, Y, Z = (newx[j], newy[j], newz[j])
+                newbodies[j, i, 0] = X
+                newbodies[j, i, 1] = Y
+                newbodies[j, i, 2] = Z
+        skeleton_list = []
+        body_dim = origin_skeletons[0].body.shape[0]
+        lhand_dim = origin_skeletons[0].lhand.shape[0]
+        rhand_dim = origin_skeletons[0].rhand.shape[0]
+        for i in range(amount_of_skeletons):
+            body = newbodies[i, :body_dim, :]
+            lhand = newbodies[i, body_dim:body_dim+lhand_dim, :]
+            rhand = newbodies[i, body_dim + lhand_dim:body_dim+lhand_dim+rhand_dim, :]
+            body_part = Bodypart("body", TypeOfBodyPart.BODY, body)
+            left_part = Bodypart("left", TypeOfBodyPart.LHAND, lhand)
+            right_part = Bodypart("right", TypeOfBodyPart.RHAND, rhand)
+            skeleton = Skeleton(body_part, left_part, right_part)
+            skeleton_list.append(skeleton)
+        return skeleton_list
+\end{lstlisting}
+
+Este método escoge una serie de esqueletos del final de la primera lista \textit{sign1} y del principio de la segunda lista \textit{sign2} utilizando los argumentos \textit{prev$\_$cut} y \textit{next$\_$cut} respectivamente. Luego se obtienen las dimensiones de los esqueletos para poder crear un arreglo de ceros correspondiente a las dimensiones de la cantidad de esqueletos a ser creados y las dimensiones anteriormente extraídas de los esqueletos. Posteriormente se desenrollan y envuelven todos los puntos de los esqueletos escogidos para interpolar, haciendo que en la variable \textit{points} queden todos los valores referentes al i-ésimo punto de cada esqueleto. La interpolación se realiza por cada componente de cada punto como se explica en el capítulo anterior. 
+
+\subsubsection{Método de animación con matplotlib}
+Poder revisar como se unen o efectúan los distintos tokens, mediante los métodos descritos en subsecciones anteriores, es de vital importancia para determinar el correcto funcionamiento de los mismos. Es por dicha razón que utilizando la biblioteca de matplotlib, se consigue de manera efectiva animar los distintos tokens lo cual mejora la experiencia durante la evaluación durante los experimentos.
+
+El método \textit{animate} [véase Código \ref{code:tokenlsc:animate}] recibe la cantidad de fps (frames por segundo) a utilizar como medida de velocidad de la animación, lo cual es usual en este campo. Las dimensiones de la figura tanto como el ángulo de elevación y de azimuth se encuentran en los valores óptimos por defecto para la mejor experiencia visual del usuario, aunque este puede utilizar otros valores para dichos argumentos modificando los parámetros \textit{figsize}, \textit{elev}, \textit{angle}. De igual manera, es posible visualizar el índice numérico de cada punto, así como las uniones entre los puntos utilizando los argumentos booleanos \textit{text} y \textit{joints}
+
+\begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Método animate de la clase TokenLSC}, label={code:tokenlsc:animate}] 
+def animate(self, fps=30, figsize=(7.0, 3.5), elev=90, angle=1, dims=None, text=False, joints=True):
+        if not dims:
+            dims = self.dims
+        skeletons_points = np.array([sk.all_points for sk in self.sign])
+        rc('animation', html='jshtml')
+        fig_size_x, fig_size_y = figsize
+        plt.rcParams["figure.figsize"] = [fig_size_x, fig_size_y]
+        plt.rcParams['figure.autolayout'] = True
+        fig = plt.figure()
+        ax = fig.add_subplot(projection='3d')
+        colors = ['b', 'y', 'r', 'k']
+        total_frames = skeletons_points.shape[0]
+        time = total_frames / fps
+        def update(i):
+            ax.clear()
+            D = self.__transform_data(skeletons_points, i)
+            s = 0
+            e = 0
+            for j, dim in enumerate(dims):
+                dim = dim[0]
+                e += dim
+                x = D[s:e, 0]
+                y = D[s:e, 1]
+                z = D[s:e, 2]
+                ax.plot(D[s:e, 0], D[s:e, 1], D[s:e, 2], f'{colors[j]}.')
+                if text:
+                    for p in range(s, e):
+                        ax.text3D(D[p, 0], D[p, 1], D[p, 2], str(p))
+                if joints:
+                    for h, k in self.fullbodyjoints[j]:
+                        ax.plot([D[s+h, 0], D[s+k, 0]], [D[s+h, 1], D[s+k, 1]],
+                                [D[s+h, 2], D[s+k, 2]], f'{colors[j]}')
+                s += dim
+                ax.set_axis_off()
+                if elev and angle:
+                    ax.view_init(elev, angle)
+            return ax
+        return FuncAnimation(fig, update, frames=total_frames, repeat=True, interval=fps)
+\end{lstlisting}
+En este método de animación se seleccionan las dimensiones de las distintas partes así como los puntos por cada frame para poderse utilizar dentro del método update definido de manera interna en el scope de dicho método. Internamente, update realiza transformaciones de rotación a los datos y  separa por dimensiones para un mejor acabado gráfico en la proyección final. 
+
+\subsubsection{Métodos para importar los tokens}
+Siempre se puede crear un \textit{TokenLSC} de manera manual, pero se vuelve muy tedioso y se puede incurrir en errores a la hora de manipular los datos. Es por esto que se agrega el método para importar un token desde un directorio que le sea suministrado [véase Código \ref{code:tokenlsc:imports}]. 
+
+\begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Métodos estático para importar tokens de la clase TokenLSC}, label={code:tokenlsc:imports}] 
+    @staticmethod
+    def import_from_path(path: str, name: str = '_new-sign_', verbose=False, with_normalize=True, with_crop=True) -> 'TokenLSC':
+        if '.json' in path:
+            return TokenLSC.import_token_lsc_from_json(str(path), with_normalize=True, with_crop=True)
+        else:
+            return TokenLSC.import_token_lsc_from_video(path, name, with_normalize=True, with_crop=True)
+    @staticmethod
+    def import_from_video(path: str, name: str = '_new-sign_', verbose=False, with_normalize=True, with_crop=True) -> 'TokenLSC':
+        images = TokenLSC._get_images_from_video(path)
+        with mp.solutions.holistic.Holistic() as holistic:
+            results = []
+            for image in images:
+                result = holistic.process(image)
+                results.append(result)
+            sign = TokenLSC._process_results(results)
+            return TokenLSC(name, sign, with_normalize=with_normalize, with_crop=with_crop)
+    @staticmethod
+    def import_from_json(path: str, name: str = '', verbose=False, with_normalize=True, with_crop=True) -> 'TokenLSC':
+        json_path = Path(path)
+        json_list = json.loads(json_path.read_text())
+        if len(json_list) > 1:
+            print(
+                f"More than one representation found at {path}. Selecting first representation.")
+        json_repr = json_list[0]
+        np_repr = np.array(json_repr)
+        if verbose:
+            print("Json shape:", np_repr.shape)
+        np_repr = np.reshape(
+            np_repr, (np_repr.shape[0], np_repr.shape[1] // 3, 3))
+        if verbose:
+            print("Frames shape", np_repr.shape)
+        body = np_repr[:, :25, :]
+        left = np_repr[:, 25:46, :]
+        right = np_repr[:, 46:, :]
+        if verbose:
+            print("Body shape", body.shape)
+            print("Left shape", left.shape)
+            print("Right shape", right.shape)
+        skeletons = []
+        for frame_body, frame_left, frame_right in zip(body, left, right):
+            body_part = Bodypart("body", TypeOfBodyPart.BODY, frame_body)
+            left_part = Bodypart("left", TypeOfBodyPart.LHAND, frame_left)
+            right_part = Bodypart("right", TypeOfBodyPart.RHAND, frame_right)
+            skeleton = Skeleton(body_part, left_part, right_part)
+            skeletons.append(skeleton)
+        if name == '':
+            name = json_path.name.split(".")[0]
+        return TokenLSC(name, skeletons, with_normalize=with_normalize, with_crop=with_crop)
+\end{lstlisting}
+
+El método genérico import$\_{}$from$\_{}$path analiza la extensión del directorio que recibe como argumento para decidir cual de los métodos secundarios utilizar para el propósito requerido. El método de import$\_{}$from$\_{}$video utiliza los métodos explicados y brindados por Gutiérrez-González \brackcite{leynier-lsc-2021}. Las ventajas de importar de vídeo es que cualquiera puede hacer uso de la herramienta para, combinándolo con los métodos de exportación, ampliar y extender la base de datos actual de señas cubanas.
+
+\subsubsection{Métodos para exportar los tokens}
+
+Como primer método de exportación contamos con export$\_{}$to$\_{}$json, el cual recibe como argumento solamente la ruta al archivo donde se desea guardar el token. Otro de los métodos con que se cuenta es el método de exportar a un archivo BVH de captura de movimiento, el cual se logra exportar pero con fallas dado el desconocimiento del autor acerca de los ángulos de rotación requeridos [véase Código \ref{code:tokenlsc:exports}].
+
+\begin{lstlisting}[basicstyle=\tiny,language=Python, caption={Métodos estático para exportar tokens de la clase TokenLSC}, label={code:tokenlsc:exports}] 
+ 	def export_to_json(self,path:str):
+        sign_array=np.array([sk.all_points for sk in self.sign])
+        with open(path, 'w', encoding='utf-8') as json_file:
+            json.dump(sign_array,json_file,sort_keys=True, ensure_ascii=False)
+            json_file.close() 
+ 	 def export_to_bvh(self, header=None, output_file=None):
+        if not header:
+            header = self.get_bvh_header(self.poses3d)
+        channels = []
+        for frame, pose in enumerate(self.poses3d):
+            channels.append(self.pose2euler(pose, header))
+        if output_file:
+            write_bvh(output_file, header, channels)
+        return channels, header
+\end{lstlisting}
+
+\section{Experimentación}
+Al desplegar e implementar los métodos y clases, de la sección anterior, se realizaron una serie de experimentos comparativos para evaluar el desempeño de los mismos.
+
+\subsection{Experimento 1}
+Para el primer experimento se decidió verificar si el umbral escogido para selección de los frames con manos faltantes resultó efectivo, así como evaluar la interpolación realizada en dichos intervalos, comparando los intervalos de los tokens antes y después de normalizarlos.
+
+En la Fig \ref{f:umbral_deteccion_manos_faltantes} se puede apreciar la distancia de cada mano con respecto al cero del espacio siendo los picos, los momentos en que desaparecen. Se tomó el valor de distancia 2 con respecto al (0,0,0) como umbral para detectar cuando una mano ha desaparecido para lograr a tiempo interpolarla.
+
+\begin{figure}[t]
+\centering
+		\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/umbral_missing_rhand_aborto}
+		\caption{Umbral en la gráfica de la mano derecha del token ``aborto''}
+		\label{f:umbral_rhand_aborto}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/umbral_missing_lhand_aborto}
+		\caption{Umbral en la gráfica de la mano izquierda del token ``aborto''}
+		\label{f:umbral_lhand_aborto}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/umbral_missing_rhand_amar}
+		\caption{Umbral en la gráfica de la mano derecha del token ``amar''}
+		\label{f:umbral_rhand_amar}
+	\end{subfigure}
+	\caption{Umbral de detección de las manos faltantes en los tokens ``aborto'' y ``amar'' Fig \ref{f:manos_faltantes}.}
+	\label{f:umbral_deteccion_manos_faltantes}
+\end{figure}
+
+Mientras que en la Fig \ref{f:no_manos_faltantes} se puede analizar la comparativa con respecto al token sin normalizar.
+
+Este experimento brindó buenos resultados al realizarse con el método de interpolación lineal, mientras que el cúbico, a pesar de aportar mayor suavidad, en intervalos cortos generaba perturbaciones y alargamiento de extremidades.
+
+\subsection{Experimento 2}
+Para este segundo experimento se evalúa la efectividad del recorte por inactividad en un mismo token mediante la verificación de los extremos del mismo y gráficas que cuantifican el movimiento general y por las manos. En cuanto a la Fig \ref{f:recorte_aborto} se puede verificar como el método de recorte por inactividad está detectando los intervalos de mayor cantidad de movimiento. Siendo estos mayoritariamente los del medio de la grabación, ya que en los extremos es que suele estar en reposo el señante. En la Fig \ref{f:fluidez_novariable} se podrá apreciar mejor el recorte puesto que se ve el principio y el final actual de cada token de muestra.
+
+
+\begin{figure}[t]
+\centering
+	\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/umbrales_recorte_rhand_aborto.png}
+		\caption{ Umbrales para recortar del movimiento de la mano derecha del token }
+		\label{f:rhand_movediff_amar}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/umbrales_recorte_lhand_aborto.png}
+		\caption{Umbrales para recortar del movimiento de la mano izquierda del token }
+		\label{f:lhand_movediff_amar}
+	\end{subfigure}
+		\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/umbrales_recorte_general_aborto.png}
+		\caption{Umbrales para recortar del movimiento de la mano derecha del token  }
+		\label{f:general_movediff_amar}
+	\end{subfigure}
+	\vskip 0pt
+	\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/recorte_rhand_aborto.png}
+		\caption{Recorte de movimiento de la mano derecha del token  }
+		\label{f:rhand_movediff_aborto}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height=0.9\linewidth]{Graphics/recorte_lhand_aborto.png}
+		\caption{Recorte de movimiento de la mano izquierda del token  }
+		\label{f:lhand_movediff_aborto}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height=0.9\linewidth]{Graphics/recorte_general_aborto.png}
+		\caption{Recorte de movimiento general del token  }
+		\label{f:general_movediff_aborto}
+	\end{subfigure}
+	\caption{Detección de umbrales en las gráficas de movimiento por manos y general del token ``aborto'' normalizado. Véase Fig \ref{f:movediff_aborto_amar}}
+	\label{f:recorte_aborto}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+		\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/cropped_principio_aborto.png}
+		\caption{Principio del token recortado y normalizado ``aborto''}
+		\label{f:principio_novariable_aborto}
+	\end{subfigure}
+		\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/cropped_principio_amar.png}
+		\caption{Principio del token recortado y normalizado ``amar''}
+		\label{f:principio_novariable_amar}
+	\end{subfigure}	
+	\vskip 0pt
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/cropped_final_aborto.png}
+		\caption{Final del token recortado y normalizado ``aborto''}
+		\label{f:final_novariable_aborto}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/cropped_final_amar.png}
+		\caption{Final del token recortado y normalizado ``amar''}
+		\label{f:final_novariable_amar}
+	\end{subfigure}
+	
+	\caption{Resultados obtenidos en cuanto a diferencias mostradas en la Fig \ref{f:fluidez_variable}.}
+	\label{f:fluidez_novariable}
+\end{figure}
+
+Este experimento demostró excelentes resultados, jugando un papel especial el hecho de escoger de manera efectiva las funciones que cuantifican el movimiento, la función a maximizar y el porcentaje de movimiento total a mantener. Valores distintos a los escogidos por defecto pueden devenir en exceso de recorte o ninguno.
+
+\subsection{Experimento 3}
+Para este tercer experimento se decide valorar el correcto posicionamiento y ajuste de la mano falsa, así como la interpolación en la suma entre dos tokens. Para ello se eligen al token al correspondiente a la seña de aborto y de la seña amar, puesto que este último carece de manos en ambos extremos en su token original sin normalizar ni realizarle recorte por inactividad.
+  
+Se evaluó de positivo el uso de las manos falsas y la interpolación interna para solucionar el problema de las manos faltantes. Como se ve en la Fig \ref{f:no_manos_faltantes}.
+
+\begin{figure}[t]
+\centering
+		\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/mano_antes_desaparecer}
+		\caption{Mano antes de desaparecer del token original ``aborto''}
+		\label{f:no_mano_faltante_0}
+	\end{subfigure}
+	\hskip 0pt
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/mano_desaparecida}
+		\caption{Frame siguiente al anterior del token original ``aborto''}
+		\label{f:no_mano_faltante_1}
+	\end{subfigure}
+		\vskip 0pt
+		\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/anterior_a_missing_hand_aborto}
+		\caption{Mano antes de, supuestamente, desaparecer del token recortado y normalizado ``aborto''}
+		\label{f:no_mano_faltante_0}
+	\end{subfigure}
+	\hskip 0pt
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/ya_no_missing_hand_aborto}
+		\caption{Frame siguiente al anterior del token recortado y normalizado ``aborto''}
+		\label{f:no_mano_faltante_1}
+	\end{subfigure}
+	
+	
+	\caption{Resultados obtenidos en cuanto a diferencias mostradas en la Fig \ref{f:manos_faltantes}.}
+	\label{f:no_manos_faltantes}
+	\end{figure}
+	
+Además de que uno de los mejores resultados obtenidos durante la experimentación fue la secuencia de interpolación entre 2 señas con finales tan marcados. Véase la Fig \ref{f:seq_interpol} para una mejor apreciación.
+	\begin{figure}[t]
+\centering
+	\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/interpol_aborto_amar_0.png}
+		\caption{ Frame 0}
+		\label{f:frame0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/interpol_aborto_amar_1.png}
+		\caption{Frame 1 }
+		\label{f:frame1}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/interpol_aborto_amar_2.png}
+		\caption{Frame 2 }
+		\label{f:frame2}
+	\end{subfigure}
+	\vskip 0pt
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/interpol_aborto_amar_3.png}
+		\caption{Frame 3}
+		\label{f:frame3}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/interpol_aborto_amar_4.png}
+		\caption{Frame 4 }
+		\label{f:frame4}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/interpol_aborto_amar_5.png}
+		\caption{Frame 5 }
+		\label{f:frame5}
+	\end{subfigure}
+	\vskip 0pt
+	\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height=0.9\linewidth]{Graphics/interpol_aborto_amar_6.png}
+		\caption{Frame 6}
+		\label{f:frame6}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height=0.9\linewidth]{Graphics/interpol_aborto_amar_7.png}
+		\caption{Frame 7}
+		\label{f:frame7}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/interpol_aborto_amar_8.png}
+		\caption{Frame 8}
+		\label{f:frame8}
+	\end{subfigure}
+	\vskip 0pt
+	\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/interpol_aborto_amar_9.png}
+		\caption{Frame 9}
+		\label{f:frame9}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/interpol_aborto_amar_10.png}
+		\caption{Frame 10}
+		\label{f:frame10}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+	\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/interpol_aborto_amar_11.png}
+		\caption{Frame 11 }
+		\label{f:frame11}
+	\end{subfigure}
+	\caption{Secuencia Interpolada entre el token ``aborto'' y ``amar''. Véase Fig \ref{f:fluidez_novariable} para notar los extremos a unirse.}
+	\label{f:seq_interpol}
+\end{figure}
+Este experimento se comportó de manera correcta, a pesar de que la mano no corresponde con la original o presenta una disposición diferente a la que originalmente perteneciera a la imagen. Dado que no existe una referencia en la imagen original se puede evaluar como positivo el desempeño demostrado.
+\subsection{Experimento 4}
+Se decidió probar si la solución presentada para exportar a formato BVH era al menos una aproximación inicial. Para ello se evaluó de manera perceptual la secuencia generada por el archivo BVH importándolo a la aplicación del motor gráfico Blender
+
+
+
+
+\begin{figure}[t]
+\centering
+		\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/blender_bvh_1.png}
+		\caption{Frame 0}
+		\label{f:bframe0}
+	\end{subfigure}
+		\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/blender_bvh_2.png}
+		\caption{Frame 1}
+		\label{f:bframe1}
+	\end{subfigure}	
+	\vskip 0pt
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/blender_bvh_3.png}
+		\caption{Frame 2}
+		\label{f:bframe2}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[align=t,width=0.9\linewidth, height =0.9\linewidth]{Graphics/blender_bvh_4.png}
+		\caption{Frame 3}
+		\label{f:bframe3}
+	\end{subfigure}
+	
+	\caption{Resultado del archivo BVH del token recortado y normalizado ``amar''}
+	\label{f:amar_bvh}
+\end{figure}
+Los resultados obtenidos con la generación de un archivo BVH no fueron aceptables. Por desconocimiento de algunos de los ángulos de rotación y como definirlos correctamente, solo se pudo armar el esqueleto pero su movilidad deja mucho que desear. Muchas de las uniones no pueden moverse en algunas direcciones a pesar de que hace el intento por replicar la seña de la cual fue hecho [véase Fig \ref{f:amar_bvh}].
+
+\section{Discusión}
+
+A partir de los experimentos realizados se pudo concluir que la propuesta brindó buenos resultados fuera del ámbito de la animación. Muchos factores como bibliotecas de python como bpy (Módulo de Blender para Python) que no llegaron a instalarse nunca podrían haber acelerado o incluso hacer muy ligero y transparente el proceso de llevar el \textit{TokenLSC} a BVH e incluso a animación 3D.
+Pese a los buenos resultados en todos los demás aspectos, aún quedan estructuras y proporciones en las que trabajar, dado que la forma del cuerpo, así como su proporción, dependen mucho de factores como:
+\begin{itemize}
+\item ángulo de inclinación de la grabación
+\item estructura corporal del señante
+\item fallos en el modelo de reconocimiento
+\end{itemize}
+La solución implementada brinda generalización y extensibilidad para su uso en otros fines tanto para generar nuevo contenido audiovisual como para registrar nuevas señas al conjunto de datos.
+
+
+
+
